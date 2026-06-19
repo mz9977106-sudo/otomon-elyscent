@@ -1,1470 +1,1280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ottoman Scents | Premium Luxury Fragrances Pakistan</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary-black: #070708;
-            --secondary-black: #0f0f12;
-            --light-black: #17171c;
-            --gold-primary: #caa63a;
-            --gold-hover: #f1db8a;
-            --gold-glow: rgba(202, 166, 58, 0.25);
-            --text-light: #f5f5fa;
-            --text-muted: #9fa0a6;
-            --font-luxury: 'Cinzel', serif;
-            --font-body: 'Montserrat', sans-serif;
-            --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--primary-black);
-            color: var(--text-light);
-            font-family: var(--font-body);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, .brand-logo {
-            font-family: var(--font-luxury);
-            letter-spacing: 3px;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition-smooth);
-        }
-
-        li {
-            list-style: none;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .section-padding {
-            padding: 120px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 60px;
-            position: relative;
-            color: var(--text-light);
-            text-transform: uppercase;
-            font-weight: 400;
-        }
-
-        .section-title span {
-            color: var(--gold-primary);
-            display: block;
-            font-size: 0.9rem;
-            font-family: var(--font-body);
-            letter-spacing: 6px;
-            margin-top: 10px;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 40px;
-            height: 1px;
-            background: var(--gold-primary);
-            margin: 20px auto 0;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 35px;
-            font-family: var(--font-luxury);
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border: 1px solid var(--gold-primary);
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .btn-gold {
-            background-color: var(--gold-primary);
-            color: #000;
-        }
-
-        .btn-gold:hover {
-            background-color: transparent;
-            color: var(--gold-primary);
-            box-shadow: 0 0 25px var(--gold-glow);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--gold-primary);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--gold-primary);
-            color: #000;
-            box-shadow: 0 0 25px var(--gold-glow);
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(7, 7, 8, 0.92);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(202, 166, 58, 0.1);
-            z-index: 1000;
-            transition: var(--transition-smooth);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100px;
-        }
-
-        .brand-logo {
-            font-size: 1.8rem;
-            font-weight: 400;
-            color: var(--gold-primary);
-            display: flex;
-            flex-direction: column;
-            line-height: 1.1;
-            text-align: center;
-        }
-
-        .brand-logo span {
-            font-size: 0.7rem;
-            font-family: var(--font-body);
-            letter-spacing: 5px;
-            color: var(--text-light);
-            margin-top: 4px;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 35px;
-        }
-
-        .nav-link {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 500;
-            color: var(--text-muted);
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: var(--gold-primary);
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .cart-icon-wrapper {
-            position: relative;
-            cursor: pointer;
-            font-size: 1.4rem;
-            color: var(--gold-primary);
-            transition: var(--transition-smooth);
-        }
-
-        .cart-count {
-            position: absolute;
-            top: -7px;
-            right: -10px;
-            background-color: var(--gold-primary);
-            color: #000;
-            font-size: 0.65rem;
-            font-weight: 700;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            color: var(--gold-primary);
-            font-size: 1.5rem;
-        }
-
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.65), rgba(7,7,8,0.98)), url('https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            padding-top: 100px;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 850px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 400;
-            color: #fff;
-            margin-bottom: 25px;
-            line-height: 1.2;
-            text-transform: uppercase;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            margin-bottom: 45px;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-        }
-
-        .product-card {
-            background-color: var(--secondary-black);
-            border: 1px solid rgba(202, 166, 58, 0.08);
-            padding: 35px;
-            text-align: center;
-            transition: var(--transition-smooth);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--gold-primary);
-            box-shadow: 0 15px 40px rgba(202, 166, 58, 0.05);
-        }
-
-        .product-tag {
-            position: absolute;
-            top: 25px;
-            left: 25px;
-            background-color: var(--gold-primary);
-            color: #000;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            padding: 5px 14px;
-            letter-spacing: 1px;
-            z-index: 2;
-        }
-
-        .product-image-placeholder {
-            width: 100%;
-            height: 320px;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            background: radial-gradient(circle, #1a1a24 0%, #0d0d12 100%);
-            border: 1px solid rgba(255,255,255,0.02);
-            box-shadow: inset 0 0 30px rgba(0,0,0,0.6);
-        }
-
-        .product-image-placeholder::before {
-            content: '';
-            position: absolute;
-            width: 75px;
-            height: 165px;
-            border-radius: 6px;
-            box-shadow: 0 20px 35px rgba(0,0,0,0.7);
-            transition: var(--transition-smooth);
-        }
-
-        .product-card:hover .product-image-placeholder::before {
-            transform: scale(1.04);
-        }
-
-        .product-card[data-id="Fatih"] .product-image-placeholder::before {
-            background: linear-gradient(135deg, #1c1c1c 0%, #050505 100%);
-            border: 2px solid var(--gold-primary);
-        }
-        .product-card[data-id="pasha"] .product-image-placeholder::before {
-            background: linear-gradient(135deg, #0b1a3a 0%, #040a17 100%);
-            border: 2px solid #e0e0e0;
-        }
-        .product-card[data-id="Miras"] .product-image-placeholder::before {
-            background: linear-gradient(135deg, #063c27 0%, #01140c 100%);
-            border: 2px solid var(--gold-primary);
-        }
-
-        .product-image-placeholder::after {
-            content: '';
-            position: absolute;
-            width: 32px;
-            height: 25px;
-            top: 55px;
-            background: linear-gradient(90deg, #b89228 0%, #e9d38d 50%, #b89228 100%);
-            border-radius: 2px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-        .product-card[data-id="pasha"] .product-image-placeholder::after {
-            background: linear-gradient(90deg, #999 0%, #fff 50%, #999 100%);
-        }
-
-        .product-image-placeholder i {
-            position: absolute;
-            font-size: 1.5rem;
-            color: rgba(255, 255, 255, 0.08);
-            z-index: 1;
-        }
-
-        .product-title {
-            font-size: 1.8rem;
-            margin-bottom: 12px;
-            color: var(--text-light);
-            font-weight: 500;
-        }
-
-        .product-meta {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        .product-price {
-            font-size: 1.5rem;
-            color: var(--gold-primary);
-            font-weight: 600;
-            margin-bottom: 30px;
-            font-family: var(--font-luxury);
-        }
-
-        .product-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .product-actions .btn {
-            width: 100%;
-            padding: 14px;
-            font-size: 0.8rem;
-        }
-
-        .why-choose-us {
-            background-color: var(--secondary-black);
-            border-top: 1px solid rgba(202, 166, 58, 0.08);
-            border-bottom: 1px solid rgba(202, 166, 58, 0.08);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-item {
-            text-align: center;
-            padding: 40px 25px;
-            background-color: var(--light-black);
-            border: 1px solid rgba(202, 166, 58, 0.03);
-            transition: var(--transition-smooth);
-        }
-
-        .feature-item:hover {
-            border-color: var(--gold-primary);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .feature-icon {
-            font-size: 2.3rem;
-            color: var(--gold-primary);
-            margin-bottom: 25px;
-        }
-
-        .feature-item h3 {
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-
-        .feature-item p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-
-        .about-content {
-            max-width: 850px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-content p {
-            font-size: 1.3rem;
-            line-height: 2;
-            color: var(--text-light);
-            font-weight: 300;
-            font-family: var(--font-luxury);
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .faq-item {
-            background-color: var(--secondary-black);
-            border: 1px solid rgba(202, 166, 58, 0.08);
-            transition: var(--transition-smooth);
-        }
-
-        .faq-header {
-            padding: 24px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .faq-header h3 {
-            font-size: 1.1rem;
-            font-family: var(--font-body);
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-
-        .faq-icon {
-            color: var(--gold-primary);
-            transition: var(--transition-smooth);
-        }
-
-        .faq-body {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            background-color: var(--light-black);
-        }
-
-        .faq-body p {
-            padding: 24px 30px;
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            border-top: 1px solid rgba(202, 166, 58, 0.04);
-            line-height: 1.8;
-        }
-
-        .faq-item.active {
-            border-color: var(--gold-primary);
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
-        }
-
-        .cart-sidebar {
-            position: fixed;
-            top: 0;
-            right: -460px;
-            width: 100%;
-            max-width: 460px;
-            height: 100vh;
-            background-color: var(--secondary-black);
-            box-shadow: -10px 0 40px rgba(0,0,0,0.7);
-            z-index: 1100;
-            transition: var(--transition-smooth);
-            display: flex;
-            flex-direction: column;
-            border-left: 1px solid var(--gold-primary);
-        }
-
-        .cart-sidebar.active {
-            right: 0;
-        }
-
-        .cart-header {
-            padding: 30px;
-            border-bottom: 1px solid rgba(202, 166, 58, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .close-cart {
-            font-size: 1.6rem;
-            color: var(--gold-primary);
-            cursor: pointer;
-            transition: var(--transition-smooth);
-        }
-
-        .close-cart:hover {
-            transform: rotate(90deg);
-        }
-
-        .cart-items-container {
-            flex: 1;
-            overflow-y: auto;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .empty-cart-msg {
-            text-align: center;
-            color: var(--text-muted);
-            margin-top: 60px;
-            font-family: var(--font-luxury);
-        }
-
-        .cart-item {
-            display: flex;
-            gap: 20px;
-            background-color: var(--light-black);
-            padding: 20px;
-            border: 1px solid rgba(202, 166, 58, 0.05);
-            position: relative;
-            align-items: center;
-        }
-
-        .cart-item-details {
-            flex: 1;
-        }
-
-        .cart-item-title {
-            font-family: var(--font-luxury);
-            font-size: 1.2rem;
-            margin-bottom: 6px;
-            letter-spacing: 1px;
-        }
-
-        .cart-item-price {
-            color: var(--gold-primary);
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .cart-item-qty {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 0.9rem;
-        }
-
-        .qty-btn {
-            background: transparent;
-            border: 1px solid rgba(202, 166, 58, 0.3);
-            color: var(--text-light);
-            width: 28px;
-            height: 28px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition-smooth);
-        }
-
-        .qty-btn:hover {
-            border-color: var(--gold-primary);
-            color: var(--gold-primary);
-        }
-
-        .remove-item {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: #ef4444;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: var(--transition-smooth);
-        }
-
-        .remove-item:hover {
-            transform: scale(1.1);
-        }
-
-        .cart-footer {
-            padding: 30px;
-            border-top: 1px solid rgba(202, 166, 58, 0.1);
-            background-color: var(--light-black);
-        }
-
-        .cart-total-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.3rem;
-            font-family: var(--font-luxury);
-            margin-bottom: 25px;
-        }
-
-        .cart-total-row span:last-child {
-            color: var(--gold-primary);
-            font-weight: 600;
-        }
-
-        .cart-footer .btn {
-            width: 100%;
-        }
-
-        .checkout-section {
-            background-color: var(--light-black);
-            border-top: 1px solid rgba(202, 166, 58, 0.05);
-            display: none;
-        }
-
-        .checkout-section.active {
-            display: block;
-        }
-
-        .checkout-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 50px;
-            align-items: start;
-        }
-
-        .checkout-form {
-            background-color: var(--secondary-black);
-            padding: 45px;
-            border: 1px solid rgba(202, 166, 58, 0.08);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            background-color: var(--light-black);
-            border: 1px solid rgba(202, 166, 58, 0.15);
-            padding: 14px 18px;
-            color: var(--text-light);
-            font-family: var(--font-body);
-            transition: var(--transition-smooth);
-            font-size: 0.95rem;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--gold-primary);
-            box-shadow: 0 0 12px var(--gold-glow);
-        }
-
-        .radio-group {
-            display: flex;
-            gap: 30px;
-            margin-top: 12px;
-        }
-
-        .radio-label {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            font-size: 0.95rem;
-        }
-
-        .radio-label input {
-            accent-color: var(--gold-primary);
-            width: 16px;
-            height: 16px;
-        }
-
-        .order-summary-box {
-            background-color: var(--secondary-black);
-            padding: 45px;
-            border: 1px solid rgba(202, 166, 58, 0.08);
-        }
-
-        .order-summary-box h3 {
-            font-size: 1.4rem;
-            margin-bottom: 25px;
-            border-bottom: 1px solid rgba(202, 166, 58, 0.1);
-            padding-bottom: 12px;
-            text-transform: uppercase;
-        }
-
-        .summary-items-list {
-            margin-bottom: 25px;
-        }
-
-        .summary-item-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 14px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.03);
-            font-size: 0.95rem;
-        }
-
-        .summary-total-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.3rem;
-            font-family: var(--font-luxury);
-            margin-top: 20px;
-            color: var(--gold-primary);
-        }
-
-        .contact-section {
-            text-align: center;
-            background-color: var(--secondary-black);
-            border-top: 1px solid rgba(202, 166, 58, 0.08);
-        }
-
-        .contact-box h3 {
-            font-size: 2rem;
-            color: var(--gold-primary);
-            margin-bottom: 20px;
-        }
-
-        .contact-box p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            color: var(--text-muted);
-        }
-
-        .phone-link {
-            font-size: 2.2rem;
-            color: var(--text-light);
-            font-family: var(--font-luxury);
-            font-weight: bold;
-            display: inline-block;
-            transition: var(--transition-smooth);
-        }
-
-        .phone-link:hover {
-            color: var(--gold-primary);
-            transform: scale(1.03);
-        }
-
-        footer {
-            background-color: var(--primary-black);
-            padding: 80px 0 40px;
-            border-top: 1px solid rgba(202, 166, 58, 0.1);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 50px;
-        }
-
-        .footer-about h4, .footer-links h4 {
-            color: var(--gold-primary);
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-        }
-
-        .footer-about p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            max-width: 450px;
-            line-height: 1.8;
-        }
-
-        .footer-links ul {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .footer-links a:hover {
-            color: var(--gold-primary);
-            padding-left: 5px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .social-icons a {
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(202, 166, 58, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold-primary);
-            border-radius: 50%;
-            transition: var(--transition-smooth);
-        }
-
-        .social-icons a:hover {
-            background-color: var(--gold-primary);
-            color: #000;
-            box-shadow: 0 0 15px var(--gold-glow);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 35px;
-            border-top: 1px solid rgba(255,255,255,0.03);
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.6);
-            backdrop-filter: blur(4px);
-            z-index: 1050;
-            display: none;
-        }
-
-        .overlay.active {
-            display: block;
-        }
-
-        @media (max-width: 992px) {
-            .checkout-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
-            }
-            .footer-about p {
-                margin: 0 auto;
-            }
-            .social-icons {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 100px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 100px);
-                background-color: var(--secondary-black);
-                flex-direction: column;
-                align-items: center;
-                padding-top: 60px;
-                gap: 40px;
-                transition: var(--transition-smooth);
-                border-top: 1px solid rgba(202, 166, 58, 0.1);
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .hero h1 {
-                font-size: 2.6rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zentro AI Development Agency | Web, AI Bots, SEO & Digital Growth</title>
+<meta name="description" content="Zentro AI Development Agency specializes in web development, Meta Ads, AI bots & automation, SEO growth, and digital problem solving. Transform your business with cutting-edge AI-powered solutions from Pakistan.">
+<meta name="keywords" content="AI development agency Pakistan, web development, Meta Ads, AI bots automation, SEO growth, WhatsApp bots, Zentro AI agency">
+<meta name="author" content="Zentro AI Development Agency">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://zentroai.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zentroai.com/">
+<meta property="og:title" content="Zentro AI Development Agency | Web, AI Bots, SEO & Digital Growth">
+<meta property="og:description" content="Zentro AI — full-service digital agency delivering intelligent web solutions, AI automation, Meta Ads & SEO from Pakistan.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&h=630&fit=crop">
+<meta property="og:site_name" content="Zentro AI Agency">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zentro AI Development Agency | Web, AI Bots, SEO & Digital Growth">
+<meta name="twitter:description" content="Transform your business with AI-powered web development, automation, Meta Ads & SEO from Zentro AI Agency Pakistan.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&h=630&fit=crop">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Zentro AI Development Agency","description":"AI-powered web development, Meta Ads, automation bots, SEO growth agency.","url":"https://zentroai.com","telephone":"+923238194763","email":"zentroaiagencypakistan@gmail.com","address":{"@type":"PostalAddress","addressCountry":"PK"},"serviceType":["Web Development","SEO","AI Automation","Meta Ads"]}</script>
 </head>
 <body>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#050a18;color:#e2e8f0;overflow-x:hidden;line-height:1.6}
+:root{--bg:#050a18;--bg2:#0a1628;--bgc:rgba(255,255,255,0.04);--bdr:rgba(99,179,237,0.15);--bdrh:rgba(99,179,237,0.4);--ab:#63b3ed;--ap:#b794f4;--ac:#76e4f7;--apk:#fc8181;--g1:linear-gradient(135deg,#667eea,#764ba2);--g2:linear-gradient(135deg,#63b3ed,#b794f4);--g3:linear-gradient(135deg,#76e4f7,#667eea);--tp:#f7fafc;--ts:#a0aec0;--tm:#718096;--r:16px;--rl:24px;--shd:0 8px 32px rgba(0,0,0,.4);--sg:0 0 40px rgba(99,179,237,.15);--tr:all 0.3s cubic-bezier(.4,0,.2,1)}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#050a18}::-webkit-scrollbar-thumb{background:#63b3ed;border-radius:3px}
+::selection{background:rgba(99,179,237,.3);color:#fff}
+.con{max-width:1200px;margin:0 auto;padding:0 24px}
+.sec{padding:100px 0}
+.stitle{font-size:clamp(2rem,4vw,3rem);font-weight:800;background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:16px;line-height:1.2}
+.ssub{text-align:center;color:var(--ts);font-size:1.1rem;max-width:600px;margin:0 auto 60px}
+.glass{background:rgba(255,255,255,.04);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--bdr);border-radius:var(--r)}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(99,179,237,.1);border:1px solid rgba(99,179,237,.3);border-radius:100px;padding:8px 20px;font-size:.85rem;color:var(--ab);letter-spacing:.05em;font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:100px;font-size:.95rem;font-weight:600;cursor:pointer;transition:var(--tr);border:none;text-decoration:none;white-space:nowrap;font-family:inherit}
+.btnp{background:var(--g2);color:#fff;box-shadow:0 4px 20px rgba(99,179,237,.3)}
+.btnp:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(99,179,237,.5)}
+.btno{background:transparent;color:var(--ab);border:1px solid rgba(99,179,237,.4)}
+.btno:hover{background:rgba(99,179,237,.1);border-color:var(--ab);transform:translateY(-2px)}
+.btng{background:rgba(255,255,255,.06);color:var(--tp);border:1px solid var(--bdr)}
+.btng:hover{background:rgba(255,255,255,.1);border-color:var(--bdrh)}
+#navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:var(--tr)}
+#navbar.scrolled{background:rgba(5,10,24,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr);padding:12px 0}
+.navi{display:flex;align-items:center;justify-content:space-between}
+.nlogo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nico{width:40px;height:40px;background:var(--g2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:900;color:#fff}
+.ntxt{font-size:1.3rem;font-weight:800;background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nlinks{display:flex;align-items:center;gap:8px;list-style:none}
+.nlinks a{color:var(--ts);text-decoration:none;font-size:.9rem;font-weight:500;padding:8px 16px;border-radius:100px;transition:var(--tr)}
+.nlinks a:hover{color:var(--tp);background:rgba(255,255,255,.06)}
+.hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.hbg span{width:24px;height:2px;background:var(--tp);border-radius:2px;transition:var(--tr);display:block}
+.mmenu{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(5,10,24,.98);backdrop-filter:blur(20px);padding:24px;z-index:999;border-bottom:1px solid var(--bdr)}
+.mmenu.open{display:block}
+.mmenu a{display:block;color:var(--ts);text-decoration:none;padding:14px 0;border-bottom:1px solid var(--bdr);font-size:1rem;font-weight:500;transition:color .2s}
+.mmenu a:hover{color:var(--ab)}
+#hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:80px}
+.hbg2{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(99,179,237,.12) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 100%,rgba(183,148,244,.1) 0%,transparent 60%)}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(99,179,237,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(99,179,237,.04) 1px,transparent 1px);background-size:60px 60px}
+.horb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+.ho1{width:500px;height:500px;background:rgba(99,179,237,.08);top:-100px;right:-100px;animation:flt 8s ease-in-out infinite}
+.ho2{width:400px;height:400px;background:rgba(183,148,244,.06);bottom:-50px;left:-50px;animation:flt 10s ease-in-out infinite reverse}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-30px)}}
+.hcont{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.htitle{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1.1;margin-bottom:24px;color:var(--tp)}
+.htitle .hl{background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hsub{font-size:1.15rem;color:var(--ts);margin-bottom:16px;max-width:540px;line-height:1.7}
+.hdesc{font-size:.95rem;color:var(--tm);margin-bottom:40px;max-width:520px}
+.hbtns{display:flex;gap:16px;flex-wrap:wrap}
+.hvis{width:100%;max-width:480px;aspect-ratio:1;position:relative;margin:0 auto}
+.sphere{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(99,179,237,.3),rgba(183,148,244,.15) 50%,rgba(5,10,24,.8) 80%);border:1px solid rgba(99,179,237,.2);display:flex;align-items:center;justify-content:center;animation:psph 4s ease-in-out infinite;box-shadow:0 0 80px rgba(99,179,237,.15),inset 0 0 60px rgba(99,179,237,.05);position:relative;overflow:hidden}
+@keyframes psph{0%,100%{box-shadow:0 0 80px rgba(99,179,237,.15),inset 0 0 60px rgba(99,179,237,.05)}50%{box-shadow:0 0 120px rgba(99,179,237,.25),inset 0 0 80px rgba(99,179,237,.1)}}
+.sinn{text-align:center;z-index:2;padding:20px}
+.sinn svg{width:80px;height:80px;color:var(--ab);opacity:.8}
+.stxt{font-size:.85rem;color:var(--ac);letter-spacing:.1em;margin-top:12px}
+.oring{position:absolute;border-radius:50%;border:1px dashed rgba(99,179,237,.2);animation:ospin linear infinite}
+.or1{width:140%;height:140%;animation-duration:20s}.or2{width:110%;height:110%;animation-duration:15s;animation-direction:reverse}
+@keyframes ospin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.odot{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--ab);top:-4px;left:50%;transform:translateX(-50%);box-shadow:0 0 12px var(--ab)}
+.fpills{position:absolute;inset:-40px;pointer-events:none}
+.fpill{position:absolute;background:rgba(255,255,255,.05);border:1px solid var(--bdr);border-radius:100px;padding:8px 16px;font-size:.75rem;color:var(--ts);backdrop-filter:blur(10px);animation:fplt 6s ease-in-out infinite;white-space:nowrap}
+.fp1{top:10%;right:0;animation-delay:0s}.fp2{bottom:20%;right:0;animation-delay:1.5s}.fp3{top:40%;left:-20px;animation-delay:3s}
+@keyframes fplt{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.svcgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.svcard{background:var(--bgc);border:1px solid var(--bdr);border-radius:var(--rl);padding:32px;transition:var(--tr);position:relative;overflow:hidden}
+.svcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--g2);transform:scaleX(0);transition:transform .3s ease;transform-origin:left}
+.svcard:hover::before{transform:scaleX(1)}
+.svcard:hover{border-color:var(--bdrh);box-shadow:var(--sg);transform:translateY(-4px)}
+.svico{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px}
+.si1{background:rgba(99,179,237,.15)}.si2{background:rgba(183,148,244,.15)}.si3{background:rgba(118,228,247,.15)}.si4{background:rgba(104,211,145,.15)}.si5{background:rgba(252,129,129,.15)}
+.svcard h3{font-size:1.2rem;font-weight:700;color:var(--tp);margin-bottom:12px}
+.svcard p{color:var(--ts);font-size:.9rem;margin-bottom:20px;line-height:1.7}
+.stags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.stag{background:rgba(99,179,237,.08);border:1px solid rgba(99,179,237,.15);border-radius:100px;padding:4px 12px;font-size:.75rem;color:var(--ab)}
+.lmbtn{background:transparent;border:1px solid var(--bdr);border-radius:100px;padding:10px 20px;color:var(--ab);font-size:.85rem;font-weight:600;cursor:pointer;transition:var(--tr);display:inline-flex;align-items:center;gap:8px;font-family:inherit}
+.lmbtn:hover{background:rgba(99,179,237,.1);border-color:var(--ab)}
+.svdet{display:none;margin-top:20px;padding-top:20px;border-top:1px solid var(--bdr)}
+.svdet.open{display:block}
+.svdet h4{font-size:.9rem;font-weight:700;color:var(--ac);margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em}
+.ditem{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:.85rem;color:var(--ts);line-height:1.6}
+.ditem::before{content:'→';color:var(--ab);flex-shrink:0;margin-top:1px}
+.dmgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
+.dmcard{background:var(--bgc);border:1px solid var(--bdr);border-radius:var(--rl);padding:32px 24px;text-align:center;transition:var(--tr)}
+.dmcard:hover{border-color:var(--bdrh);box-shadow:var(--sg);transform:translateY(-4px)}
+.dmico{font-size:2.5rem;margin-bottom:16px;display:block}
+.dmcard h3{font-size:1.1rem;font-weight:700;color:var(--tp);margin-bottom:12px}
+.dmpgs{list-style:none;margin-bottom:20px}
+.dmpgs li{font-size:.8rem;color:var(--tm);padding:4px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.dmpgs li:last-child{border-bottom:none}
+.dov{display:none;position:fixed;inset:0;z-index:2000;background:#050a18;overflow-y:auto}
+.dov.active{display:block}
+.dnav{position:sticky;top:0;background:rgba(5,10,24,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr);z-index:100}
+.dnavi{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;gap:16px;flex-wrap:wrap}
+.dnlogo{font-size:1.1rem;font-weight:800;background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap}
+.dnlinks{display:flex;gap:4px;flex-wrap:wrap;list-style:none}
+.dnlinks a{color:var(--ts);text-decoration:none;font-size:.8rem;padding:6px 12px;border-radius:100px;transition:var(--tr);cursor:pointer}
+.dnlinks a:hover,.dnlinks a.act{color:var(--ab);background:rgba(99,179,237,.1)}
+.btsb{background:var(--g2);border:none;border-radius:100px;padding:8px 20px;color:#fff;font-size:.85rem;font-weight:600;cursor:pointer;transition:var(--tr);white-space:nowrap}
+.btsb:hover{opacity:.85;transform:translateY(-1px)}
+.dpg{display:none;min-height:calc(100vh - 60px);padding:60px 24px}
+.dpg.active{display:block}
+.rhero{text-align:center;padding:80px 24px;background:linear-gradient(135deg,rgba(99,179,237,.08),rgba(183,148,244,.08));border-radius:var(--rl);margin-bottom:60px}
+.rhero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px}
+.rhero p{color:var(--ts);font-size:1.1rem;max-width:600px;margin:0 auto}
+.mcat{margin-bottom:48px}
+.mcatttl{font-size:1.4rem;font-weight:700;background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--bdr)}
+.mtbl{width:100%;border-collapse:collapse}
+.mtbl th{text-align:left;padding:12px 16px;background:rgba(99,179,237,.08);color:var(--ab);font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.mtbl td{padding:12px 16px;border-bottom:1px solid var(--bdr);color:var(--ts);font-size:.9rem}
+.mtbl tr:hover td{background:rgba(255,255,255,.02)}
+.fggrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.fgcard{background:var(--bgc);border:1px solid var(--bdr);border-radius:var(--r);overflow:hidden;transition:var(--tr)}
+.fgcard:hover{transform:translateY(-4px);box-shadow:var(--sg)}
+.fgcard img{width:100%;height:200px;object-fit:cover;display:block}
+.fgci{padding:16px}
+.fgci h4{font-weight:700;color:var(--tp);margin-bottom:6px;font-size:1rem}
+.fgci p{color:var(--ts);font-size:.85rem;margin-bottom:4px}
+.fgci .ori{color:var(--ac);font-size:.8rem}
+.rfwrap{max-width:600px;margin:0 auto;background:var(--bgc);border:1px solid var(--bdr);border-radius:var(--rl);padding:40px}
+.fgrp{margin-bottom:20px}
+.fgrp label{display:block;font-size:.85rem;font-weight:600;color:var(--ab);margin-bottom:8px;letter-spacing:.04em}
+.fgrp input,.fgrp select,.fgrp textarea{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--bdr);border-radius:10px;padding:12px 16px;color:var(--tp);font-size:.9rem;outline:none;transition:border-color .2s;font-family:inherit}
+.fgrp input:focus,.fgrp select:focus,.fgrp textarea:focus{border-color:var(--ab);box-shadow:0 0 0 3px rgba(99,179,237,.1)}
+.fgrp select{cursor:pointer}.fgrp select option{background:#0a1628}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.rgrp{display:flex;gap:16px;flex-wrap:wrap}
+.ritem{display:flex;align-items:center;gap:8px;cursor:pointer}
+.ritem input{width:auto;cursor:pointer;accent-color:var(--ab)}
+.ritem span{font-size:.9rem;color:var(--ts)}
+.loccard{max-width:500px;margin:0 auto;background:var(--bgc);border:1px solid var(--bdr);border-radius:var(--rl);padding:40px;text-align:center}
+.locico{font-size:3rem;margin-bottom:16px;display:block}
+.cigrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:700px;margin:0 auto}
+.cicard{background:var(--bgc);border:1px solid var(--bdr);border-radius:var(--r);padding:32px;text-align:center;transition:var(--tr)}
+.cicard:hover{border-color:var(--bdrh)}
+.ciico{font-size:2rem;margin-bottom:12px;display:block}
+.cicard h4{font-weight:700;color:var(--tp);margin-bottom:8px}
+.cicard p,.cicard a{color:var(--ts);font-size:.9rem;text-decoration:none}
+.cicard a:hover{color:var(--ab)}
+.bksec{text-align:center;padding:40px 0;border-top:1px solid var(--bdr);margin-top:40px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.pcard{background:var(--bgc);border:1px solid var(--bdr);border-radius:var(--r);overflow:hidden;transition:var(--tr)}
+.pcard:hover{transform:translateY(-4px);box-shadow:var(--sg)}
+.pcard img{width:100%;height:200px;object-fit:cover;display:block}
+.pcardi{padding:20px}
+.pcardi h4{font-weight:700;color:var(--tp);margin-bottom:6px}
+.pcardi .loc{color:var(--ac);font-size:.8rem;margin-bottom:8px}
+.pcardi .det{color:var(--ts);font-size:.85rem;margin-bottom:12px;line-height:1.6}
+.pprice{font-size:1.1rem;font-weight:800;background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gal4{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.galc{border-radius:var(--r);overflow:hidden;border:1px solid var(--bdr);transition:var(--tr)}
+.galc:hover{transform:scale(1.02)}
+.galc img{width:100%;height:220px;object-fit:cover;display:block}
+.evgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.evcard{background:var(--bgc);border:1px solid var(--bdr);border-radius:var(--r);padding:24px;transition:var(--tr)}
+.evcard:hover{border-color:var(--bdrh)}
+.evdate{font-size:.8rem;color:var(--ab);font-weight:700;letter-spacing:.05em;margin-bottom:8px}
+.evcard h4{font-weight:700;color:var(--tp);margin-bottom:8px}
+.evcard p{color:var(--ts);font-size:.85rem;line-height:1.6}
+.drgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.drcard{background:var(--bgc);border:1px solid var(--bdr);border-radius:var(--r);overflow:hidden;text-align:center;transition:var(--tr)}
+.drcard:hover{border-color:var(--bdrh);transform:translateY(-4px)}
+.drcard img{width:100%;height:200px;object-fit:cover;display:block}
+.drcardi{padding:16px}
+.drcardi h4{font-weight:700;color:var(--tp);margin-bottom:4px}
+.drcardi p{color:var(--ac);font-size:.85rem;margin-bottom:4px}
+.drcardi span{color:var(--tm);font-size:.8rem}
+.prodgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.prcard{background:var(--bgc);border:1px solid var(--bdr);border-radius:var(--r);overflow:hidden;transition:var(--tr)}
+.prcard:hover{border-color:var(--bdrh);transform:translateY(-4px);box-shadow:var(--sg)}
+.prcard img{width:100%;height:200px;object-fit:cover;display:block}
+.prcardi{padding:16px}
+.prcardi h4{font-weight:700;color:var(--tp);margin-bottom:4px;font-size:.95rem}
+.prcardi .cat{color:var(--ac);font-size:.75rem;margin-bottom:8px}
+.prcardi .price{font-size:1.1rem;font-weight:800;background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.acbtn{width:100%;background:rgba(99,179,237,.1);border:1px solid rgba(99,179,237,.3);border-radius:8px;padding:8px;color:var(--ab);font-size:.8rem;font-weight:600;cursor:pointer;margin-top:10px;transition:var(--tr);font-family:inherit}
+.acbtn:hover{background:rgba(99,179,237,.2)}
+.abgrid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:80px}
+.abtxt h2{font-size:2rem;font-weight:800;color:var(--tp);margin-bottom:20px}
+.abtxt p{color:var(--ts);margin-bottom:16px;line-height:1.8}
+.abvis{background:var(--bgc);border:1px solid var(--bdr);border-radius:var(--rl);padding:40px;text-align:center}
+.abvico{font-size:4rem;margin-bottom:20px}
+.wcgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;margin-bottom:80px}
+.wccard{background:var(--bgc);border:1px solid var(--bdr);border-radius:var(--r);padding:28px;transition:var(--tr)}
+.wccard:hover{border-color:var(--bdrh);transform:translateY(-3px)}
+.wcico{font-size:1.8rem;margin-bottom:12px;display:block}
+.wccard h4{font-weight:700;color:var(--tp);margin-bottom:8px}
+.wccard p{color:var(--ts);font-size:.9rem;line-height:1.6}
+.prgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
+.prpcard{background:var(--bgc);border:1px solid var(--bdr);border-radius:var(--r);padding:28px 24px;text-align:center;transition:var(--tr)}
+.prpcard:hover{border-color:var(--bdrh);transform:translateY(-4px);box-shadow:var(--sg)}
+.prnum{font-size:2.5rem;font-weight:900;background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px;line-height:1}
+.prpcard h4{font-weight:700;color:var(--tp);margin-bottom:12px;font-size:1rem}
+.prpcard p{color:var(--ts);font-size:.85rem;line-height:1.6}
+.faqlist{max-width:800px;margin:0 auto}
+.faqitem{border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:12px;overflow:hidden;transition:border-color .3s}
+.faqitem.open{border-color:var(--bdrh)}
+.faqq{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;background:transparent;border:none;width:100%;text-align:left;color:var(--tp);font-size:.95rem;font-weight:600;gap:16px;transition:background .2s;font-family:inherit}
+.faqq:hover{background:rgba(255,255,255,.02)}
+.faqico{width:28px;height:28px;border-radius:50%;background:rgba(99,179,237,.1);border:1px solid rgba(99,179,237,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;color:var(--ab);transition:transform .3s}
+.faqitem.open .faqico{transform:rotate(45deg);background:rgba(99,179,237,.2)}
+.faqa{padding:0 24px;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease}
+.faqitem.open .faqa{max-height:400px;padding:0 24px 20px}
+.faqa p{color:var(--ts);font-size:.9rem;line-height:1.8;border-top:1px solid var(--bdr);padding-top:16px}
+.ebdg{display:inline-flex;align-items:center;gap:6px;background:rgba(252,129,129,.1);border:1px solid rgba(252,129,129,.3);border-radius:100px;padding:4px 12px;font-size:.8rem;color:var(--apk);font-weight:600;margin-left:8px}
+.prigrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.pricard{background:var(--bgc);border:1px solid var(--bdr);border-radius:var(--rl);padding:32px 24px;text-align:center;transition:var(--tr);position:relative;overflow:hidden}
+.pricard.feat{border-color:rgba(99,179,237,.5);background:rgba(99,179,237,.06)}
+.pricard.feat::before{content:'Most Popular';position:absolute;top:0;left:0;right:0;background:var(--g2);color:#fff;font-size:.75rem;font-weight:700;padding:6px;text-align:center;letter-spacing:.05em}
+.pricard:hover{border-color:var(--bdrh);box-shadow:var(--sg);transform:translateY(-4px)}
+.priname{font-size:.85rem;font-weight:700;color:var(--ac);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.priprice{font-size:1.6rem;font-weight:900;color:var(--tp);margin-bottom:4px;line-height:1.2}
+.pridelv{font-size:.8rem;color:var(--tm);margin-bottom:20px}
+.prifeat{list-style:none;margin-bottom:24px;text-align:left}
+.prifeat li{font-size:.82rem;color:var(--ts);padding:7px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:center;gap:8px}
+.prifeat li::before{content:'✓';color:var(--ab);font-weight:700;flex-shrink:0}
+.pricard .btn{width:100%;justify-content:center;font-size:.85rem}
+.pfsec{background:linear-gradient(135deg,rgba(99,179,237,.04),rgba(183,148,244,.04));border-radius:var(--rl);padding:60px;border:1px solid var(--bdr);max-width:800px;margin:0 auto}
+.pfsec h2{font-size:2rem;font-weight:800;background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;text-align:center}
+.pfsec>p{text-align:center;color:var(--ts);margin-bottom:40px}
+.mform textarea{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--bdr);border-radius:10px;padding:12px 16px;color:var(--tp);font-size:.9rem;outline:none;transition:border-color .2s;font-family:inherit;resize:vertical;min-height:120px}
+.mform textarea:focus{border-color:var(--ab);box-shadow:0 0 0 3px rgba(99,179,237,.1)}
+.mform input,.mform select{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--bdr);border-radius:10px;padding:12px 16px;color:var(--tp);font-size:.9rem;outline:none;transition:border-color .2s;font-family:inherit}
+.mform input:focus,.mform select:focus{border-color:var(--ab);box-shadow:0 0 0 3px rgba(99,179,237,.1)}
+.mform select{cursor:pointer;-webkit-appearance:none}
+.mform select option{background:#0a1628}
+.fsuc{display:none;text-align:center;padding:40px;color:var(--ac)}
+.fsuc .sico{font-size:3rem;margin-bottom:16px}
+.fsuc h3{font-size:1.4rem;font-weight:700;margin-bottom:8px;color:var(--tp)}
+.fsuc p{color:var(--ts)}
+.ctmethods{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;max-width:900px;margin:0 auto}
+.ctcard{background:var(--bgc);border:1px solid var(--bdr);border-radius:var(--rl);padding:40px 32px;text-align:center;transition:var(--tr)}
+.ctcard:hover{border-color:var(--bdrh);transform:translateY(-4px);box-shadow:var(--sg)}
+.ctcard .ico{font-size:2.5rem;margin-bottom:16px;display:block}
+.ctcard h3{font-weight:700;color:var(--tp);margin-bottom:8px}
+.ctcard p,.ctcard a{color:var(--ts);font-size:.95rem;text-decoration:none;display:block;margin-bottom:4px}
+.ctcard a:hover{color:var(--ab)}
+.wabtn{display:inline-flex;align-items:center;gap:10px;background:#25D366;border:none;border-radius:100px;padding:12px 28px;color:#fff;font-size:.95rem;font-weight:700;cursor:pointer;transition:var(--tr);text-decoration:none;margin-top:12px;font-family:inherit}
+.wabtn:hover{background:#1ebd59;transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,.3)}
+footer{background:#030710;border-top:1px solid var(--bdr);padding:60px 0 32px}
+.ftgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.ftbrand p{color:var(--tm);font-size:.9rem;margin-top:16px;line-height:1.7;max-width:280px}
+.ftcol h4{font-size:.85rem;font-weight:700;color:var(--ab);letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
+.ftcol ul{list-style:none}
+.ftcol ul li{margin-bottom:10px}
+.ftcol ul li a{color:var(--tm);text-decoration:none;font-size:.9rem;transition:color .2s}
+.ftcol ul li a:hover{color:var(--ab)}
+.ftbot{border-top:1px solid var(--bdr);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.ftbot p{color:var(--tm);font-size:.85rem}
+.fade{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+.fade.vis{opacity:1;transform:translateY(0)}
+@media(max-width:1024px){.ftgrid{grid-template-columns:1fr 1fr}.abgrid{grid-template-columns:1fr;gap:40px}}
+@media(max-width:768px){.sec{padding:60px 0}.hcont{grid-template-columns:1fr;gap:40px}.hvis{max-width:280px}.nlinks,.nbtn{display:none}.hbg{display:flex}.ftgrid{grid-template-columns:1fr}.prigrid{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}.pfsec{padding:32px 20px}.frow{grid-template-columns:1fr}.dnlinks{display:none}.mtbl{font-size:.8rem}.pgrid{grid-template-columns:1fr}.gal4{grid-template-columns:1fr 1fr}.drgrid{grid-template-columns:1fr 1fr}.prodgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.hvis{max-width:220px}.svcgrid{grid-template-columns:1fr}.dmgrid{grid-template-columns:1fr 1fr}.gal4{grid-template-columns:1fr}.drgrid{grid-template-columns:1fr}.prodgrid{grid-template-columns:1fr}}
+</style>
+<nav id="navbar" role="navigation">
+<div class="con"><div class="navi">
+<a href="#hero" class="nlogo"><div class="nico">Z</div><span class="ntxt">Zentro AI</span></a>
+<ul class="nlinks">
+<li><a href="#services">Services</a></li><li><a href="#demos">Demos</a></li>
+<li><a href="#about">About</a></li><li><a href="#faq">FAQ</a></li>
+<li><a href="#pricing">Pricing</a></li><li><a href="#contact">Contact</a></li>
+</ul>
+<div style="display:flex;align-items:center;gap:12px">
+<a href="#project" class="btn btnp nbtn" style="font-size:.85rem;padding:10px 20px">Start Project</a>
+<button class="hbg" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</div></div></div></nav>
+<div class="mmenu" id="mmenu">
+<a href="#services" onclick="closeMenu()">Services</a><a href="#demos" onclick="closeMenu()">Demo Sites</a>
+<a href="#about" onclick="closeMenu()">About</a><a href="#faq" onclick="closeMenu()">FAQ</a>
+<a href="#pricing" onclick="closeMenu()">Pricing</a><a href="#project" onclick="closeMenu()">Start Project</a>
+<a href="#contact" onclick="closeMenu()">Contact</a></div>
 
-    <div class="overlay" id="siteOverlay"></div>
+<section id="hero">
+<div class="hbg2"></div><div class="hgrid"></div>
+<div class="horb ho1"></div><div class="horb ho2"></div>
+<div class="con"><div class="hcont">
+<div>
+<div style="margin-bottom:24px" class="fade"><span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg>AI-Powered Digital Agency</span></div>
+<h1 class="htitle fade">Build Smarter.<br>Grow <span class="hl">Faster</span> with<br>AI Solutions.</h1>
+<p class="hsub fade">Zentro AI is a full-service digital development agency delivering intelligent web solutions, automation systems, and growth-focused digital strategies.</p>
+<p class="hdesc fade">From custom websites and AI-powered bots to Meta Ads campaigns and SEO — we engineer every project with precision and purpose.</p>
+<div class="hbtns fade">
+<a href="#project" class="btn btnp"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Start Your Project</a>
+<a href="#services" class="btn btno">Explore Services</a>
+</div></div>
+<div style="display:flex;justify-content:center" class="fade">
+<div class="hvis">
+<div class="sphere">
+<div class="oring or1"><div class="odot"></div></div>
+<div class="oring or2"><div class="odot"></div></div>
+<div class="sinn">
+<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="40" cy="40" r="30" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4" opacity=".4"/>
+<path d="M25 40C25 32 32 26 40 26C48 26 55 32 55 40C55 48 48 54 40 54C32 54 25 48 25 40Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+<circle cx="40" cy="40" r="6" fill="currentColor" opacity=".6"/>
+<path d="M40 20L40 26M40 54L40 60M20 40L26 40M54 40L60 40" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="40" cy="20" r="3" fill="currentColor"/><circle cx="40" cy="60" r="3" fill="currentColor"/>
+<circle cx="20" cy="40" r="3" fill="currentColor"/><circle cx="60" cy="40" r="3" fill="currentColor"/>
+</svg>
+<div class="stxt">ZENTRO AI ENGINE</div></div></div>
+<div class="fpills">
+<div class="fpill fp1">🤖 AI Automation</div>
+<div class="fpill fp2">📈 SEO Growth</div>
+<div class="fpill fp3">💡 Web Dev</div>
+</div></div></div>
+</div></div></section>
+<section id="services" class="sec">
+<div class="con">
+<div class="stitle fade">Our Services</div>
+<p class="ssub fade">End-to-end digital solutions designed to elevate your business with cutting-edge technology and intelligent strategy.</p>
+<div class="svcgrid">
 
-    <header>
-        <div class="container nav-container">
-            <div class="hamburger" id="mobMenuBtn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-            
-            <a href="#" class="brand-logo">
-                Ottoman Scents
-                <span>LUXURY FRAGRANCE</span>
-            </a>
+<div class="svcard fade">
+<div class="svico si1">🌐</div><h3>Web Development</h3>
+<p>Custom, high-performance websites built from the ground up. We craft responsive, scalable digital experiences that convert visitors into customers.</p>
+<div class="stags"><span class="stag">Frontend</span><span class="stag">Backend</span><span class="stag">Responsive</span><span class="stag">SEO-Ready</span></div>
+<button class="lmbtn" onclick="toggleSvc(this)"><span>Learn More</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg></button>
+<div class="svdet"><h4>Full Development Lifecycle</h4>
+<div class="ditem">Requirement Analysis — In-depth discovery to understand your goals, audience, and technical needs before any code is written.</div>
+<div class="ditem">UI/UX Planning — Wireframes, user flows, and design prototypes ensuring a seamless experience for every visitor.</div>
+<div class="ditem">Responsive Design — Pixel-perfect layouts that work flawlessly on every screen, from mobile to 4K displays.</div>
+<div class="ditem">Frontend Development — Clean, semantic HTML/CSS/JS with modern techniques for fast, interactive interfaces.</div>
+<div class="ditem">Backend Development — Robust server-side logic, databases, and APIs built for reliability and scalability.</div>
+<div class="ditem">Testing — Comprehensive cross-browser, cross-device, and functionality testing before launch.</div>
+<div class="ditem">Optimization — Performance tuning, image compression, code minification for sub-second load times.</div>
+<div class="ditem">Deployment — Managed launch on your preferred hosting with SSL, CDN setup, and domain configuration.</div>
+<div class="ditem">Post-Launch Support — 2 months of dedicated support after delivery for updates, fixes, and guidance.</div>
+</div></div>
 
-            <nav class="nav-menu" id="navMenu">
-                <a href="#" class="nav-link active">Home</a>
-                <a href="#collection" class="nav-link">Collection</a>
-                <a href="#features" class="nav-link">Why Choose Us</a>
-                <a href="#about" class="nav-link">About Us</a>
-                <a href="#faq" class="nav-link">FAQ</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </nav>
+<div class="svcard fade">
+<div class="svico si2">📊</div><h3>Meta Ads Development</h3>
+<p>Data-driven Meta advertising campaigns engineered for real results. We build, manage, and optimize ad systems that generate qualified leads and sales.</p>
+<div class="stags"><span class="stag">Facebook Ads</span><span class="stag">Instagram Ads</span><span class="stag">Retargeting</span></div>
+<button class="lmbtn" onclick="toggleSvc(this)"><span>Learn More</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg></button>
+<div class="svdet"><h4>Meta Advertising Process</h4>
+<div class="ditem">Campaign Strategy — Developing a clear roadmap for your ads including objectives, messaging, and budget allocation.</div>
+<div class="ditem">Audience Research — Deep analysis of ideal customer profiles using Meta's targeting tools and lookalike audiences.</div>
+<div class="ditem">Ad Creatives — Designing scroll-stopping visuals, copy, and video content tailored to each placement and audience segment.</div>
+<div class="ditem">Funnel Planning — Building awareness, consideration, and conversion funnels that nurture prospects at every stage.</div>
+<div class="ditem">Tracking Setup — Installing Meta Pixel, Conversions API, and UTM parameters for accurate attribution.</div>
+<div class="ditem">Optimization — Continuous A/B testing of creatives, audiences, and bidding strategies to reduce cost per result.</div>
+<div class="ditem">Performance Monitoring — Regular reporting on key metrics with actionable insights and strategy adjustments.</div>
+</div></div>
 
-            <div class="nav-actions">
-                <div class="cart-icon-wrapper" id="cartToggleBtn">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                    <span class="cart-count" id="cartCount">0</span>
-                </div>
-            </div>
-        </div>
-    </header>
+<div class="svcard fade">
+<div class="svico si3">🤖</div><h3>AI Bots &amp; Automation</h3>
+<p>Intelligent automation systems that work 24/7. From WhatsApp customer support bots to complete business workflow automation — we free your team from repetitive tasks.</p>
+<div class="stags"><span class="stag">WhatsApp Bot</span><span class="stag">Email Bot</span><span class="stag">Social Bot</span><span class="stag">Automation</span></div>
+<button class="lmbtn" onclick="toggleSvc(this)"><span>Learn More</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg></button>
+<div class="svdet"><h4>Automation Solutions</h4>
+<div class="ditem">WhatsApp Bots — AI-powered conversational bots that handle customer inquiries, bookings, and support 24/7.</div>
+<div class="ditem">Email Bots — Automated email systems for lead follow-up, onboarding sequences, and appointment reminders.</div>
+<div class="ditem">Social Media Bots — Intelligent automation for DM responses, comment management on Instagram and Facebook.</div>
+<div class="ditem">Business Automation — End-to-end workflow automation connecting your CRM, invoicing, notifications, and data processing.</div>
+<div class="ditem">Custom Integration — Connecting bots with Shopify, WooCommerce, Google Sheets, and more platforms.</div>
+<div class="ditem">Monitoring & Maintenance — Ongoing bot performance tracking, updates, and optimization for reliability.</div>
+</div></div>
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Experience Luxury in Every Spray</h1>
-                <p>Discover premium fragrances crafted for elegance, confidence, and lasting impressions.</p>
-                <div class="hero-buttons">
-                    <a href="#collection" class="btn btn-gold">Shop Now</a>
-                    <a href="#collection" class="btn btn-outline">Explore Collection</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="svcard fade">
+<div class="svico si4">🔍</div><h3>SEO Growth</h3>
+<p>Sustainable organic visibility built on technical excellence and strategic content. We help your business rank higher, attract qualified traffic, and grow authority.</p>
+<div class="stags"><span class="stag">Technical SEO</span><span class="stag">On-Page</span><span class="stag">Content</span><span class="stag">Local SEO</span></div>
+<button class="lmbtn" onclick="toggleSvc(this)"><span>Learn More</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg></button>
+<div class="svdet"><h4>SEO Growth Strategy</h4>
+<div class="ditem">Technical SEO — Full audits and fixes for crawlability, indexing, site speed, Core Web Vitals, and schema markup.</div>
+<div class="ditem">On-Page SEO — Keyword research, title tags, meta descriptions, heading hierarchy, and internal linking optimization.</div>
+<div class="ditem">Content Optimization — Enhancing existing content and creating search-optimized pages that match user intent.</div>
+<div class="ditem">Site Structure — Logical URL architecture, breadcrumbs, and navigation improvements for search engines.</div>
+<div class="ditem">Performance Optimization — Page speed improvements including caching, CDN configuration, and Core Web Vitals fixes.</div>
+<div class="ditem">Search Visibility — Building domain authority and ensuring your business appears in relevant local and national searches.</div>
+</div></div>
 
-    <section class="section-padding container" id="collection">
-        <h2 class="section-title">Featured Perfume Collection <span>Artisanal Masterpieces</span></h2>
-        <div class="products-grid">
-            
-            <div class="product-card" data-id="Fatih" data-name="Fatih" data-price="1799">
-                <span class="product-tag">Best Seller</span>
-                <div>
-                    <div class="product-image-placeholder">
-                        <i class="fa-solid fa-bottle-droplet"></i>
-                    </div>
-                    <h3 class="product-title">Fatih</h3>
-                    <div class="product-meta">50ml | Premium Glass Bottle</div>
-                    <p class="product-meta" style="margin-top:-5px; margin-bottom:15px; font-style:italic;">Black bottle with luxury gold accents & premium black and gold packaging box.</p>
-                </div>
-                <div>
-                    <div class="product-price">Rs. 1,799</div>
-                    <div class="product-actions">
-                        <button class="btn btn-outline add-to-cart-btn">Add To Cart</button>
-                        <button class="btn btn-gold buy-now-btn">Buy Now</button>
-                    </div>
-                </div>
-            </div>
+<div class="svcard fade">
+<div class="svico si5">🛠️</div><h3>Problem Solving</h3>
+<p>Expert technical assistance when you need it most. From emergency bug fixes to long-term maintenance, we keep your digital assets running at peak performance.</p>
+<div class="stags"><span class="stag">Bug Fixes</span><span class="stag">Maintenance</span><span class="stag">Consultation</span></div>
+<button class="lmbtn" onclick="toggleSvc(this)"><span>Learn More</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg></button>
+<div class="svdet"><h4>Technical Support Services</h4>
+<div class="ditem">Website Maintenance — Regular updates, security patches, backups, and uptime monitoring.</div>
+<div class="ditem">Bug Fixing — Rapid identification and resolution of technical issues, broken functionality, and security vulnerabilities.</div>
+<div class="ditem">Performance Improvements — Diagnosing and fixing slow load times, inefficient code, and server configuration issues.</div>
+<div class="ditem">Technical Consultation — Expert sessions to help you make informed decisions about technology, migrations, and upgrades.</div>
+<div class="ditem">Free Growth Advice — Honest recommendations on tools, strategies, and opportunities to grow your business — no sales agenda.</div>
+</div></div>
 
-            <div class="product-card" data-id="pasha" data-name="Pasha" data-price="1799">
-                <span class="product-tag">Royal Edition</span>
-                <div>
-                    <div class="product-image-placeholder">
-                        <i class="fa-solid fa-bottle-droplet"></i>
-                    </div>
-                    <h3 class="product-title">Pasha</h3>
-                    <div class="product-meta">50ml | Premium Glass Bottle</div>
-                    <p class="product-meta" style="margin-top:-5px; margin-bottom:15px; font-style:italic;">Royal blue bottle with silver accents & premium luxury packaging.</p>
-                </div>
-                <div>
-                    <div class="product-price">Rs. 1,799</div>
-                    <div class="product-actions">
-                        <button class="btn btn-outline add-to-cart-btn">Add To Cart</button>
-                        <button class="btn btn-gold buy-now-btn">Buy Now</button>
-                    </div>
-                </div>
-            </div>
+</div></div></section>
+<section id="demos" class="sec" style="padding-top:0">
+<div class="con">
+<div class="stitle fade">Demo Sites</div>
+<p class="ssub fade">Explore real working demos across different industries. Each site showcases what we can build for your business.</p>
+<div class="dmgrid">
+<div class="dmcard fade"><span class="dmico">🍽️</span><h3>Restaurant</h3>
+<ul class="dmpgs"><li>Home</li><li>Menu</li><li>Gallery</li><li>Reservation</li><li>Location</li><li>Contact</li></ul>
+<button class="btn btnp" style="width:100%;justify-content:center;font-size:.85rem" onclick="openDemo('restaurant')">View Demo</button></div>
 
-            <div class="product-card" data-id="Miras" data-name="Miras" data-price="1750">
-                <span class="product-tag">Luxury Blend</span>
-                <div>
-                    <div class="product-image-placeholder">
-                        <i class="fa-solid fa-bottle-droplet"></i>
-                    </div>
-                    <h3 class="product-title">Miras</h3>
-                    <div class="product-meta">50ml | Premium Glass Bottle</div>
-                    <p class="product-meta" style="margin-top:-5px; margin-bottom:15px; font-style:italic;">Emerald green bottle with gold accents & premium luxury packaging.</p>
-                </div>
-                <div>
-                    <div class="product-price">Rs. 1,750</div>
-                    <div class="product-actions">
-                        <button class="btn btn-outline add-to-cart-btn">Add To Cart</button>
-                        <button class="btn btn-gold buy-now-btn">Buy Now</button>
-                    </div>
-                </div>
-            </div>
+<div class="dmcard fade"><span class="dmico">🏠</span><h3>Real Estate</h3>
+<ul class="dmpgs"><li>Home</li><li>Services</li><li>Properties</li><li>About Us</li><li>Contact</li></ul>
+<button class="btn btnp" style="width:100%;justify-content:center;font-size:.85rem" onclick="openDemo('realestate')">View Demo</button></div>
 
-        </div>
-    </section>
+<div class="dmcard fade"><span class="dmico">🏫</span><h3>School</h3>
+<ul class="dmpgs"><li>Home</li><li>Academics</li><li>Admissions</li><li>Gallery</li><li>Events</li><li>Contact</li></ul>
+<button class="btn btnp" style="width:100%;justify-content:center;font-size:.85rem" onclick="openDemo('school')">View Demo</button></div>
 
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3>Your Selection</h3>
-            <div class="close-cart" id="closeCartBtn"><i class="fa-solid fa-xmark"></i></div>
-        </div>
-        <div class="cart-items-container" id="cartItemsContainer">
-            <p class="empty-cart-msg">Your cart is empty.</p>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total-row">
-                <span>Subtotal:</span>
-                <span id="cartSubtotal">Rs. 0</span>
-            </div>
-            <button class="btn btn-gold" id="checkoutBtn">Proceed To Checkout</button>
-        </div>
-    </div>
+<div class="dmcard fade"><span class="dmico">🏥</span><h3>Clinic</h3>
+<ul class="dmpgs"><li>Home</li><li>Services</li><li>Doctors</li><li>Departments</li><li>Appointment</li><li>Contact</li></ul>
+<button class="btn btnp" style="width:100%;justify-content:center;font-size:.85rem" onclick="openDemo('clinic')">View Demo</button></div>
 
-    <section class="section-padding checkout-section" id="checkoutSection">
-        <div class="container">
-            <h2 class="section-title">Secure Checkout <span>Complete Your Order</span></h2>
-            <div class="checkout-grid">
-                
-                <form class="checkout-form" id="whatsappOrderForm">
-                    <div class="form-group">
-                        <label for="custName">Full Name *</label>
-                        <input type="text" id="custName" class="form-control" placeholder="Enter your full name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="custPhone">WhatsApp / Phone Number *</label>
-                        <input type="tel" id="custPhone" class="form-control" placeholder="e.g. 03055624536" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="custAddress">Complete Delivery Address *</label>
-                        <input type="text" id="custAddress" class="form-control" placeholder="House/Apartment number, Street, Area" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="custCity">City *</label>
-                        <input type="text" id="custCity" class="form-control" placeholder="Enter your city name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Shipping Method</label>
-                        <div class="radio-group">
-                            <label class="radio-label">
-                                <input type="radio" name="shipping" value="Free Delivery" checked>
-                                Free Standard Shipping (Rs. 0)
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Payment Method</label>
-                        <div class="radio-group">
-                            <label class="radio-label">
-                                <input type="radio" name="payment" value="Cash on Delivery" checked>
-                                Cash on Delivery (COD)
-                            </label>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-gold" style="width:100%; margin-top:15px;">Place Order via WhatsApp</button>
-                </form>
+<div class="dmcard fade"><span class="dmico">🛒</span><h3>E-Commerce</h3>
+<ul class="dmpgs"><li>Home</li><li>Categories</li><li>Products</li><li>Featured</li><li>Cart</li><li>Contact</li></ul>
+<button class="btn btnp" style="width:100%;justify-content:center;font-size:.85rem" onclick="openDemo('ecommerce')">View Demo</button></div>
+</div></div></section>
 
-                <div class="order-summary-box">
-                    <h3>Order Summary</h3>
-                    <div class="summary-items-list" id="summaryItemsList">
-                        <p style="color:var(--text-muted);">No products selected.</p>
-                    </div>
-                    <div class="summary-item-row">
-                        <span>Shipping:</span>
-                        <span style="color:var(--gold-primary); font-weight:600;">FREE</span>
-                    </div>
-                    <div class="summary-total-row">
-                        <span>Total Payable:</span>
-                        <span id="summaryTotalAmount">Rs. 0</span>
-                    </div>
-                </div>
+<!-- RESTAURANT DEMO -->
+<div id="demo-restaurant" class="dov">
+<div class="dnav"><div class="dnavi">
+<div class="dnlogo">🍽️ Zentro Restaurant</div>
+<ul class="dnlinks">
+<li><a onclick="showPage('restaurant','rh')" class="act">Home</a></li>
+<li><a onclick="showPage('restaurant','rm')">Menu</a></li>
+<li><a onclick="showPage('restaurant','rg1')">Gallery</a></li>
+<li><a onclick="showPage('restaurant','rres')">Reservation</a></li>
+<li><a onclick="showPage('restaurant','rloc')">Location</a></li>
+<li><a onclick="showPage('restaurant','rct')">Contact</a></li>
+</ul>
+<button class="btsb" onclick="closeDemo('restaurant')">← Back To Site</button>
+</div></div>
 
-            </div>
-        </div>
-    </section>
+<div id="rh" class="dpg active"><div class="con">
+<div class="rhero"><h1>Zentro Restaurant Demo Site</h1>
+<p>Experience the finest flavors from around the world, crafted with passion and served with elegance. From authentic Pakistani cuisine to Italian classics — every dish tells a story.</p></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-bottom:40px">
+<div class="glass" style="padding:28px;text-align:center"><div style="font-size:2rem;margin-bottom:12px">🍛</div><h4 style="color:var(--tp);margin-bottom:8px">Authentic Cuisine</h4><p style="color:var(--ts);font-size:.85rem">5 international cuisines under one roof</p></div>
+<div class="glass" style="padding:28px;text-align:center"><div style="font-size:2rem;margin-bottom:12px">📅</div><h4 style="color:var(--tp);margin-bottom:8px">Online Reservations</h4><p style="color:var(--ts);font-size:.85rem">Book your table in under 60 seconds</p></div>
+<div class="glass" style="padding:28px;text-align:center"><div style="font-size:2rem;margin-bottom:12px">👨‍🍳</div><h4 style="color:var(--tp);margin-bottom:8px">Expert Chefs</h4><p style="color:var(--ts);font-size:.85rem">Trained culinary professionals</p></div>
+<div class="glass" style="padding:28px;text-align:center"><div style="font-size:2rem;margin-bottom:12px">🌟</div><h4 style="color:var(--tp);margin-bottom:8px">Premium Dining</h4><p style="color:var(--ts);font-size:.85rem">Crafted for every occasion</p></div>
+</div>
+<div style="text-align:center">
+<button class="btn btnp" onclick="showPage('restaurant','rres')">Reserve a Table</button>
+<button class="btn btno" style="margin-left:16px" onclick="showPage('restaurant','rm')">View Menu</button>
+</div></div></div>
 
-    <section class="section-padding why-choose-us" id="features">
-        <div class="container">
-            <h2 class="section-title">Why Choose Ottoman Scents <span>The Paradigm of Quality</span></h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h3>100% Original Products</h3>
-                    <p>Authentic internal formulations engineered directly by our house.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i class="fa-solid fa-gem"></i></div>
-                    <h3>Premium Glass Bottles</h3>
-                    <p>Exquisite custom artistic heavy glass vessels design architecture.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i class="fa-solid fa-box-open"></i></div>
-                    <h3>Luxury Packaging</h3>
-                    <p>Unboxing experience tailored perfectly for high-class presentations.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i class="fa-solid fa-hourglass-start"></i></div>
-                    <h3>Long Lasting Fragrance</h3>
-                    <p>Up to 8 hours on skin and up to 24 hours on fabrics.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div id="rm" class="dpg"><div class="con">
+<h2 class="stitle">Our Menu</h2>
+<div class="mcat"><div class="mcatttl">🇵🇰 Pakistani Cuisine</div>
+<table class="mtbl"><thead><tr><th>Item</th><th>Half</th><th>Full</th></tr></thead><tbody>
+<tr><td>Chicken Biryani</td><td>$6</td><td>$11</td></tr>
+<tr><td>Mutton Karahi</td><td>$10</td><td>$18</td></tr>
+<tr><td>Chicken Handi</td><td>$8</td><td>$15</td></tr>
+<tr><td>Daal Makhani</td><td>$4</td><td>$7</td></tr>
+<tr><td>Seekh Kebab (6 pcs)</td><td>$5</td><td>$9</td></tr>
+<tr><td>Nihari</td><td>$7</td><td>$13</td></tr>
+<tr><td>Chicken Sajji</td><td>$9</td><td>$16</td></tr>
+<tr><td>Paya Soup</td><td>$5</td><td>$9</td></tr>
+<tr><td>Haleem</td><td>$6</td><td>$11</td></tr>
+<tr><td>Chapli Kebab (4 pcs)</td><td>$5</td><td>$8</td></tr>
+</tbody></table></div>
+<div class="mcat"><div class="mcatttl">🇨🇳 Chinese Cuisine</div>
+<table class="mtbl"><thead><tr><th>Item</th><th>Half</th><th>Full</th></tr></thead><tbody>
+<tr><td>Chicken Chow Mein</td><td>$5</td><td>$9</td></tr>
+<tr><td>Beef Fried Rice</td><td>$5</td><td>$9</td></tr>
+<tr><td>Kung Pao Chicken</td><td>$7</td><td>$12</td></tr>
+<tr><td>Spring Rolls (4 pcs)</td><td>$4</td><td>$7</td></tr>
+<tr><td>Hot &amp; Sour Soup</td><td>$3</td><td>$6</td></tr>
+<tr><td>Sweet &amp; Sour Pork</td><td>$7</td><td>$12</td></tr>
+<tr><td>Crispy Duck</td><td>$9</td><td>$16</td></tr>
+<tr><td>Dim Sum Basket</td><td>$6</td><td>$10</td></tr>
+<tr><td>Mongolian Beef</td><td>$8</td><td>$14</td></tr>
+<tr><td>Wonton Soup</td><td>$4</td><td>$7</td></tr>
+</tbody></table></div>
+<div class="mcat"><div class="mcatttl">🇮🇹 Italian Cuisine</div>
+<table class="mtbl"><thead><tr><th>Item</th><th>Half</th><th>Full</th></tr></thead><tbody>
+<tr><td>Spaghetti Carbonara</td><td>$7</td><td>$12</td></tr>
+<tr><td>Margherita Pizza (8")</td><td>$6</td><td>$11</td></tr>
+<tr><td>Penne Arrabbiata</td><td>$6</td><td>$10</td></tr>
+<tr><td>Risotto al Funghi</td><td>$8</td><td>$14</td></tr>
+<tr><td>Tiramisu</td><td>$4</td><td>$7</td></tr>
+<tr><td>Bruschetta</td><td>$4</td><td>$6</td></tr>
+<tr><td>Chicken Parmigiana</td><td>$8</td><td>$14</td></tr>
+<tr><td>Gelato (2 scoops)</td><td>$3</td><td>$5</td></tr>
+<tr><td>Lasagna</td><td>$7</td><td>$12</td></tr>
+<tr><td>Minestrone Soup</td><td>$4</td><td>$7</td></tr>
+</tbody></table></div>
+<div class="mcat"><div class="mcatttl">🇫🇷 French Cuisine</div>
+<table class="mtbl"><thead><tr><th>Item</th><th>Half</th><th>Full</th></tr></thead><tbody>
+<tr><td>French Onion Soup</td><td>$5</td><td>$9</td></tr>
+<tr><td>Coq au Vin</td><td>$10</td><td>$18</td></tr>
+<tr><td>Croque Monsieur</td><td>$5</td><td>$9</td></tr>
+<tr><td>Ratatouille</td><td>$6</td><td>$10</td></tr>
+<tr><td>Crème Brûlée</td><td>$4</td><td>$7</td></tr>
+<tr><td>Quiche Lorraine</td><td>$5</td><td>$9</td></tr>
+<tr><td>Beef Bourguignon</td><td>$11</td><td>$20</td></tr>
+<tr><td>Croissant Platter</td><td>$4</td><td>$7</td></tr>
+<tr><td>Duck Confit</td><td>$10</td><td>$17</td></tr>
+<tr><td>Crepes Suzette</td><td>$4</td><td>$7</td></tr>
+</tbody></table></div>
+<div class="mcat"><div class="mcatttl">🍔 Fast Food</div>
+<table class="mtbl"><thead><tr><th>Item</th><th>Half</th><th>Full</th></tr></thead><tbody>
+<tr><td>Classic Smash Burger</td><td>$5</td><td>$9</td></tr>
+<tr><td>Crispy Chicken Sandwich</td><td>$5</td><td>$9</td></tr>
+<tr><td>Loaded Fries</td><td>$3</td><td>$5</td></tr>
+<tr><td>Chicken Nuggets (8 pcs)</td><td>$4</td><td>$7</td></tr>
+<tr><td>Hot Dog</td><td>$3</td><td>$5</td></tr>
+<tr><td>Club Sandwich</td><td>$5</td><td>$9</td></tr>
+<tr><td>Fish &amp; Chips</td><td>$6</td><td>$10</td></tr>
+<tr><td>Milkshake</td><td>$3</td><td>$5</td></tr>
+<tr><td>Onion Rings</td><td>$3</td><td>$5</td></tr>
+<tr><td>BBQ Wrap</td><td>$5</td><td>$8</td></tr>
+</tbody></table></div>
+</div></div>
 
-    <section class="section-padding container" id="about">
-        <h2 class="section-title">About Us <span>Our Heritage</span></h2>
-        <div class="about-content">
-            <p>"Ottoman Scents is a Pakistani fragrance brand focused on delivering premium-quality perfumes with elegant packaging and long-lasting scents. Our goal is to provide carefully crafted fragrances that enhance confidence and leave a lasting impression."</p>
-        </div>
-    </section>
+<div id="rg1" class="dpg"><div class="con">
+<h2 class="stitle">Food Gallery</h2>
+<p class="ssub">A visual feast — explore our signature dishes</p>
+<div style="display:flex;gap:12px;justify-content:center;margin-bottom:32px;flex-wrap:wrap">
+<button class="btn btnp" style="font-size:.8rem;padding:8px 16px" onclick="showPage('restaurant','rg1')">Page 1</button>
+<button class="btn btng" style="font-size:.8rem;padding:8px 16px" onclick="showPage('restaurant','rg2')">Page 2</button>
+<button class="btn btng" style="font-size:.8rem;padding:8px 16px" onclick="showPage('restaurant','rg3')">Page 3</button>
+</div>
+<div class="fggrid">
+<div class="fgcard"><img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=400&h=250&fit=crop" alt="Biryani" loading="lazy"><div class="fgci"><h4>Chicken Biryani</h4><p>Fragrant basmati rice layered with spiced chicken, saffron &amp; caramelized onions</p><div class="ori">🇵🇰 South Asian Favourite</div></div></div>
+<div class="fgcard"><img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=400&h=250&fit=crop" alt="Pizza" loading="lazy"><div class="fgci"><h4>Margherita Pizza</h4><p>Classic wood-fired pizza with San Marzano tomatoes, fresh mozzarella &amp; basil</p><div class="ori">🇮🇹 Italian Classic</div></div></div>
+<div class="fgcard"><img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=400&h=250&fit=crop" alt="Chinese" loading="lazy"><div class="fgci"><h4>Kung Pao Chicken</h4><p>Bold &amp; spicy stir-fried chicken with peanuts, dried chilies &amp; Sichuan peppercorns</p><div class="ori">🇨🇳 Chinese Street Classic</div></div></div>
+<div class="fgcard"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=250&fit=crop" alt="Burger" loading="lazy"><div class="fgci"><h4>Classic Smash Burger</h4><p>Double smash patty with American cheese, pickles, onions &amp; special sauce</p><div class="ori">🇺🇸 American Fast Food Icon</div></div></div>
+<div class="fgcard"><img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=400&h=250&fit=crop" alt="Pasta" loading="lazy"><div class="fgci"><h4>Spaghetti Carbonara</h4><p>Roman-style pasta with guanciale, pecorino Romano, egg yolk &amp; black pepper</p><div class="ori">🇮🇹 Rome's Signature Dish</div></div></div>
+<div class="fgcard"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=400&h=250&fit=crop" alt="Bourguignon" loading="lazy"><div class="fgci"><h4>Beef Bourguignon</h4><p>Slow-braised beef with burgundy wine, mushrooms, carrots &amp; pearl onions</p><div class="ori">🇫🇷 French Country Classic</div></div></div>
+</div></div></div>
 
-    <section class="section-padding container" id="faq">
-        <h2 class="section-title">Frequently Asked Questions <span>Help & Support</span></h2>
-        <div class="faq-container">
-            <div class="faq-item">
-                <div class="faq-header">
-                    <h3>What is the lasting time of Ottoman Scents perfumes?</h3>
-                    <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
-                </div>
-                <div class="faq-body">
-                    <p>Our luxury fragrances are crafted with high concentration oil compounds, delivering up to 8 hours of intense lasting on skin and up to 24 hours on fabrics depending upon weather environments.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-header">
-                    <h3>Do you offer Cash on Delivery nationwide?</h3>
-                    <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
-                </div>
-                <div class="faq-body">
-                    <p>Yes, we provide Free Cash on Delivery (COD) services across Pakistan. You only pay when the product arrives at your doorstep.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div id="rg2" class="dpg"><div class="con">
+<h2 class="stitle">Food Gallery</h2>
+<div style="display:flex;gap:12px;justify-content:center;margin-bottom:32px;flex-wrap:wrap">
+<button class="btn btng" style="font-size:.8rem;padding:8px 16px" onclick="showPage('restaurant','rg1')">Page 1</button>
+<button class="btn btnp" style="font-size:.8rem;padding:8px 16px" onclick="showPage('restaurant','rg2')">Page 2</button>
+<button class="btn btng" style="font-size:.8rem;padding:8px 16px" onclick="showPage('restaurant','rg3')">Page 3</button>
+</div>
+<div class="fggrid">
+<div class="fgcard"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=250&fit=crop" alt="Kebab" loading="lazy"><div class="fgci"><h4>Seekh Kebab</h4><p>Minced beef kebabs chargrilled on skewers with onions, herbs &amp; signature spices</p><div class="ori">🇵🇰 Mughal Heritage Dish</div></div></div>
+<div class="fgcard"><img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400&h=250&fit=crop" alt="Fried Rice" loading="lazy"><div class="fgci"><h4>Beef Fried Rice</h4><p>Wok-tossed rice with tender beef, egg, spring onions &amp; a savory soy glaze</p><div class="ori">🇨🇳 Chinese Takeaway Favourite</div></div></div>
+<div class="fgcard"><img src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=400&h=250&fit=crop" alt="Croissant" loading="lazy"><div class="fgci"><h4>Croissant Platter</h4><p>Buttery, flaky all-butter croissants with assorted jams and premium cultured butter</p><div class="ori">🇫🇷 French Bakery Essential</div></div></div>
+<div class="fgcard"><img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=400&h=250&fit=crop" alt="Chicken Sandwich" loading="lazy"><div class="fgci"><h4>Crispy Chicken Sandwich</h4><p>Juicy fried chicken fillet with coleslaw, pickles &amp; house sauce on a brioche bun</p><div class="ori">🇺🇸 American Fast Food</div></div></div>
+<div class="fgcard"><img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=400&h=250&fit=crop" alt="Tiramisu" loading="lazy"><div class="fgci"><h4>Tiramisu</h4><p>Espresso-soaked ladyfingers layered with mascarpone cream &amp; dusted with cocoa</p><div class="ori">🇮🇹 Veneto, Italy Classic</div></div></div>
+<div class="fgcard"><img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=400&h=250&fit=crop" alt="Nihari" loading="lazy"><div class="fgci"><h4>Nihari</h4><p>Slow-cooked beef shank in aromatic spiced broth — a traditional morning delicacy</p><div class="ori">🇵🇰 Old Delhi Heritage Dish</div></div></div>
+</div></div></div>
 
-    <section class="section-padding contact-section" id="contact">
-        <div class="container contact-box">
-            <h3>Concierge Support</h3>
-            <p>Prefer placing an order directly or need bespoke fragrance assistance?</p>
-            <a href="https://wa.me/923055624536" target="_blank" class="phone-link"><i class="fa-brands fa-whatsapp" style="color:#25d366; margin-right:10px;"></i>+92 305 5624536</a>
-        </div>
-    </section>
+<div id="rg3" class="dpg"><div class="con">
+<h2 class="stitle">Food Gallery</h2>
+<div style="display:flex;gap:12px;justify-content:center;margin-bottom:32px;flex-wrap:wrap">
+<button class="btn btng" style="font-size:.8rem;padding:8px 16px" onclick="showPage('restaurant','rg1')">Page 1</button>
+<button class="btn btng" style="font-size:.8rem;padding:8px 16px" onclick="showPage('restaurant','rg2')">Page 2</button>
+<button class="btn btnp" style="font-size:.8rem;padding:8px 16px" onclick="showPage('restaurant','rg3')">Page 3</button>
+</div>
+<div class="fggrid">
+<div class="fgcard"><img src="https://images.unsplash.com/photo-1516684732162-798a0062be99?w=400&h=250&fit=crop" alt="Creme Brulee" loading="lazy"><div class="fgci"><h4>Crème Brûlée</h4><p>Velvety vanilla custard beneath a perfectly caramelized sugar crust</p><div class="ori">🇫🇷 French Dessert Icon</div></div></div>
+<div class="fgcard"><img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=400&h=250&fit=crop" alt="Spring Rolls" loading="lazy"><div class="fgci"><h4>Spring Rolls</h4><p>Crispy golden rolls stuffed with mixed vegetables, glass noodles &amp; prawns</p><div class="ori">🇨🇳 Pan-Asian Snack</div></div></div>
+<div class="fgcard"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=400&h=250&fit=crop" alt="Loaded Fries" loading="lazy"><div class="fgci"><h4>Loaded Fries</h4><p>Crispy shoestring fries topped with cheese sauce, jalapeños &amp; crispy bacon bits</p><div class="ori">🇺🇸 American Comfort Food</div></div></div>
+<div class="fgcard"><img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=400&h=250&fit=crop" alt="Risotto" loading="lazy"><div class="fgci"><h4>Risotto al Funghi</h4><p>Creamy Arborio rice with wild porcini mushrooms, parmesan &amp; white wine</p><div class="ori">🇮🇹 Northern Italian Classic</div></div></div>
+<div class="fgcard"><img src="https://images.unsplash.com/photo-1512003867696-6d5ce6835040?w=400&h=250&fit=crop" alt="Ratatouille" loading="lazy"><div class="fgci"><h4>Ratatouille</h4><p>Provençal slow-roasted vegetable medley with herbs de Provence &amp; olive oil</p><div class="ori">🇫🇷 Provence Heritage</div></div></div>
+<div class="fgcard"><img src="https://images.unsplash.com/photo-1539252554453-80ab65ce3586?w=400&h=250&fit=crop" alt="Mutton Karahi" loading="lazy"><div class="fgci"><h4>Mutton Karahi</h4><p>Tender mutton in a wok with tomatoes, green chilies &amp; ginger — a Pakistani staple</p><div class="ori">🇵🇰 Pakistani Staple</div></div></div>
+</div></div></div>
 
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-about">
-                <h4>Ottoman Scents</h4>
-                <p>Curating elite sensory experiences across Pakistan with unmatched formulation aesthetics, signature packaging, and unforgettable trails.</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://wa.me/923055624536" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h4>Navigation</h4>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#collection">Collection</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Policies</h4>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Refund & Returns</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            &copy; 2026 Ottoman Scents. Built for Ultimate Premium Luxury Performance. All Rights Reserved.
-        </div>
-    </footer>
+<div id="rres" class="dpg"><div class="con">
+<h2 class="stitle">Online Reservation</h2><p class="ssub">Reserve your table in advance for a seamless dining experience</p>
+<div class="rfwrap">
+<div class="fgrp"><label>Full Name</label><input type="text" placeholder="Enter your name"></div>
+<div class="fgrp"><label>Number of Guests</label><input type="number" min="1" max="50" placeholder="e.g. 4"></div>
+<div class="fgrp"><label>Group Type</label><div class="rgrp">
+<label class="ritem"><input type="radio" name="grp" value="family"><span>👨‍👩‍👧 Family Group</span></label>
+<label class="ritem"><input type="radio" name="grp" value="boys"><span>👦 Boys Group</span></label>
+<label class="ritem"><input type="radio" name="grp" value="girls"><span>👧 Girls Group</span></label>
+</div></div>
+<div class="fgrp"><label>Meal Preference</label><div class="rgrp">
+<label class="ritem"><input type="radio" name="meal" value="breakfast"><span>🌅 Breakfast</span></label>
+<label class="ritem"><input type="radio" name="meal" value="lunch"><span>☀️ Lunch</span></label>
+<label class="ritem"><input type="radio" name="meal" value="dinner"><span>🌙 Dinner</span></label>
+</div></div>
+<div class="frow">
+<div class="fgrp"><label>Date</label><input type="date"></div>
+<div class="fgrp"><label>Time</label><input type="time"></div>
+</div>
+<button class="btn btnp" style="width:100%;justify-content:center" onclick="alert('Reservation submitted! We will confirm shortly.')">Confirm Reservation</button>
+</div></div></div>
 
-    <script>
-        const WHATSAPP_NUMBER = "923055624536";
-        let cart = [];
+<div id="rloc" class="dpg"><div class="con">
+<h2 class="stitle">Our Location</h2><p class="ssub">Find us in the heart of the city</p>
+<div class="loccard">
+<span class="locico">📍</span>
+<h3 style="color:var(--tp);font-size:1.5rem;margin-bottom:8px">Zentro Restaurant</h3>
+<p style="color:var(--ac);font-weight:700;margin-bottom:16px">Shop XYZ, Main Boulevard</p>
+<p style="color:var(--ts);margin-bottom:8px">City ABC, Central District</p>
+<p style="color:var(--tm);font-size:.85rem;margin-bottom:24px">Near City ABC Central Mall, opposite the Grand Fountain</p>
+<div style="background:rgba(99,179,237,.06);border:1px solid var(--bdr);border-radius:12px;padding:20px">
+<p style="color:var(--ts);font-size:.85rem">🕐 Open Hours: Mon–Sun | 8:00 AM – 12:00 AM</p>
+<p style="color:var(--ts);font-size:.85rem;margin-top:8px">🅿️ Ample parking available on-site</p>
+<p style="color:var(--ts);font-size:.85rem;margin-top:8px">🚌 10 min from Central Bus Terminal</p>
+</div></div></div></div>
 
-        const mobMenuBtn = document.getElementById('mobMenuBtn');
-        const navMenu = document.getElementById('navMenu');
-        const cartToggleBtn = document.getElementById('cartToggleBtn');
-        const closeCartBtn = document.getElementById('closeCartBtn');
-        const cartSidebar = document.getElementById('cartSidebar');
-        const siteOverlay = document.getElementById('siteOverlay');
-        const cartItemsContainer = document.getElementById('cartItemsContainer');
-        const cartCount = document.getElementById('cartCount');
-        const cartSubtotal = document.getElementById('cartSubtotal');
-        const checkoutBtn = document.getElementById('checkoutBtn');
-        const checkoutSection = document.getElementById('checkoutSection');
-        const summaryItemsList = document.getElementById('summaryItemsList');
-        const summaryTotalAmount = document.getElementById('summaryTotalAmount');
-        const whatsappOrderForm = document.getElementById('whatsappOrderForm');
+<div id="rct" class="dpg"><div class="con">
+<h2 class="stitle">Contact Us</h2>
+<div class="cigrid">
+<div class="cicard"><span class="ciico">📞</span><h4>Call Us</h4><p>0000-0000000</p></div>
+<div class="cicard"><span class="ciico">💬</span><h4>WhatsApp</h4><a href="https://wa.me/000000000000" target="_blank">+00-000-0000000</a></div>
+<div class="cicard"><span class="ciico">✉️</span><h4>Email</h4><a href="mailto:contact@zentrorestaurant.com">contact@zentrorestaurant.com</a></div>
+</div>
+<div class="bksec"><button class="btsb" onclick="closeDemo('restaurant')" style="font-size:1rem;padding:14px 32px">← Back To Site</button></div>
+</div></div>
+</div>
+<!-- REAL ESTATE DEMO -->
+<div id="demo-realestate" class="dov">
+<div class="dnav"><div class="dnavi">
+<div class="dnlogo">🏠 Zentro Real Estate</div>
+<ul class="dnlinks">
+<li><a onclick="showPage('realestate','reh')" class="act">Home</a></li>
+<li><a onclick="showPage('realestate','resv')">Services</a></li>
+<li><a onclick="showPage('realestate','repr')">Properties</a></li>
+<li><a onclick="showPage('realestate','reab')">About</a></li>
+<li><a onclick="showPage('realestate','rect')">Contact</a></li>
+</ul>
+<button class="btsb" onclick="closeDemo('realestate')">← Back To Site</button>
+</div></div>
+<div id="reh" class="dpg active"><div class="con">
+<div class="rhero" style="background:linear-gradient(135deg,rgba(183,148,244,.08),rgba(99,179,237,.08))">
+<h1>Zentro Real Estate</h1>
+<p>Your trusted partner in finding the perfect property. From luxury villas to commercial spaces — we connect people with spaces that match their vision and lifestyle.</p>
+<div style="margin-top:24px"><button class="btn btnp" onclick="showPage('realestate','repr')">Browse Properties</button></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px">
+<div class="glass" style="padding:24px;text-align:center"><div style="font-size:2rem;margin-bottom:8px">🏘️</div><h4 style="color:var(--tp);margin-bottom:4px">Residential</h4><p style="color:var(--ts);font-size:.85rem">Homes, apartments &amp; villas</p></div>
+<div class="glass" style="padding:24px;text-align:center"><div style="font-size:2rem;margin-bottom:8px">🏢</div><h4 style="color:var(--tp);margin-bottom:4px">Commercial</h4><p style="color:var(--ts);font-size:.85rem">Offices, retail &amp; warehouses</p></div>
+<div class="glass" style="padding:24px;text-align:center"><div style="font-size:2rem;margin-bottom:8px">🌿</div><h4 style="color:var(--tp);margin-bottom:4px">Land &amp; Plots</h4><p style="color:var(--ts);font-size:.85rem">Prime locations for development</p></div>
+<div class="glass" style="padding:24px;text-align:center"><div style="font-size:2rem;margin-bottom:8px">🔑</div><h4 style="color:var(--tp);margin-bottom:4px">Rentals</h4><p style="color:var(--ts);font-size:.85rem">Short &amp; long-term rentals</p></div>
+</div></div></div>
+<div id="resv" class="dpg"><div class="con">
+<h2 class="stitle">Our Services</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+<div class="glass" style="padding:28px"><div style="font-size:1.8rem;margin-bottom:12px">🏡</div><h4 style="color:var(--tp);margin-bottom:8px">Property Sales</h4><p style="color:var(--ts);font-size:.9rem;line-height:1.7">Professional assistance buying and selling residential and commercial properties with full legal support and transparent processes.</p></div>
+<div class="glass" style="padding:28px"><div style="font-size:1.8rem;margin-bottom:12px">📋</div><h4 style="color:var(--tp);margin-bottom:8px">Property Management</h4><p style="color:var(--ts);font-size:.9rem;line-height:1.7">Comprehensive management services for landlords including tenant screening, maintenance coordination, and rent collection.</p></div>
+<div class="glass" style="padding:28px"><div style="font-size:1.8rem;margin-bottom:12px">📊</div><h4 style="color:var(--tp);margin-bottom:8px">Market Valuation</h4><p style="color:var(--ts);font-size:.9rem;line-height:1.7">Accurate property valuations based on current market data, comparable sales, and local area analysis.</p></div>
+<div class="glass" style="padding:28px"><div style="font-size:1.8rem;margin-bottom:12px">⚖️</div><h4 style="color:var(--tp);margin-bottom:8px">Legal Consultation</h4><p style="color:var(--ts);font-size:.9rem;line-height:1.7">Expert guidance on property documentation, title transfers, and compliance with local real estate regulations.</p></div>
+</div></div></div>
+<div id="repr" class="dpg"><div class="con">
+<h2 class="stitle">Available Properties</h2>
+<div class="pgrid">
+<div class="pcard"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=220&fit=crop" alt="Villa" loading="lazy"><div class="pcardi"><h4>Sunset Crest Villa</h4><div class="loc">📍 Hillview District, City ABC</div><div class="det">5 Bed | 4 Bath | 4,200 sqft | Pool | Garden</div><div class="pprice">****$</div></div></div>
+<div class="pcard"><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=220&fit=crop" alt="House" loading="lazy"><div class="pcardi"><h4>Maple Grove Residence</h4><div class="loc">📍 Greenway Heights, City ABC</div><div class="det">4 Bed | 3 Bath | 3,100 sqft | Double Garage</div><div class="pprice">****$</div></div></div>
+<div class="pcard"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&h=220&fit=crop" alt="Modern" loading="lazy"><div class="pcardi"><h4>Pinnacle Modern Home</h4><div class="loc">📍 Skyline Avenue, City XYZ</div><div class="det">3 Bed | 2 Bath | 2,400 sqft | Smart Home</div><div class="pprice">****$</div></div></div>
+<div class="pcard"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&h=220&fit=crop" alt="Luxury" loading="lazy"><div class="pcardi"><h4>Azure Luxury Estate</h4><div class="loc">📍 Lakeshore Blvd, City ABC</div><div class="det">6 Bed | 5 Bath | 6,000 sqft | Lake View</div><div class="pprice">****$</div></div></div>
+<div class="pcard"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=220&fit=crop" alt="Townhouse" loading="lazy"><div class="pcardi"><h4>Emerald Townhouse</h4><div class="loc">📍 Park Lane, New Metro District</div><div class="det">3 Bed | 2 Bath | 1,800 sqft | Rooftop</div><div class="pprice">****$</div></div></div>
+<div class="pcard"><img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=400&h=220&fit=crop" alt="Bungalow" loading="lazy"><div class="pcardi"><h4>Oak Valley Bungalow</h4><div class="loc">📍 Countryside Road, East District</div><div class="det">3 Bed | 2 Bath | 2,000 sqft | Large Yard</div><div class="pprice">****$</div></div></div>
+<div class="pcard"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400&h=220&fit=crop" alt="Penthouse" loading="lazy"><div class="pcardi"><h4>Crown Heights Penthouse</h4><div class="loc">📍 Central Tower, City ABC CBD</div><div class="det">2 Bed | 2 Bath | 1,400 sqft | 360° View</div><div class="pprice">****$</div></div></div>
+<div class="pcard"><img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=400&h=220&fit=crop" alt="Villa2" loading="lazy"><div class="pcardi"><h4>Sapphire Modern Villa</h4><div class="loc">📍 Royal Gardens, West District</div><div class="det">4 Bed | 3 Bath | 3,800 sqft | Private Pool</div><div class="pprice">****$</div></div></div>
+<div class="pcard"><img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=400&h=220&fit=crop" alt="Apartment" loading="lazy"><div class="pcardi"><h4>Metro Edge Apartments</h4><div class="loc">📍 Urban Quarter, City ABC</div><div class="det">2 Bed | 1 Bath | 950 sqft | Gym Access</div><div class="pprice">****$</div></div></div>
+<div class="pcard"><img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=400&h=220&fit=crop" alt="Studio" loading="lazy"><div class="pcardi"><h4>Skyview Studio Loft</h4><div class="loc">📍 Arts District, City XYZ</div><div class="det">Studio | 1 Bath | 620 sqft | High Ceilings</div><div class="pprice">****$</div></div></div>
+<div class="pcard"><img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=400&h=220&fit=crop" alt="Farmhouse" loading="lazy"><div class="pcardi"><h4>Willow Creek Farmhouse</h4><div class="loc">📍 Rural Heights, Outskirts</div><div class="det">4 Bed | 3 Bath | 5,000 sqft | 2 Acres</div><div class="pprice">****$</div></div></div>
+<div class="pcard"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=220&fit=crop" alt="Office" loading="lazy"><div class="pcardi"><h4>Prime Commercial Space</h4><div class="loc">📍 Business Park, North City</div><div class="det">Open Plan | 3,500 sqft | Parking | 24/7</div><div class="pprice">****$</div></div></div>
+</div></div></div>
+<div id="reab" class="dpg"><div class="con">
+<h2 class="stitle">About Zentro Real Estate</h2>
+<div style="max-width:700px;margin:0 auto;text-align:center">
+<p style="color:var(--ts);line-height:1.8;margin-bottom:20px">Zentro Real Estate is a premier property agency dedicated to connecting buyers, sellers, and renters with the right properties. Our team brings deep market knowledge and a client-first approach to every transaction.</p>
+<p style="color:var(--ts);line-height:1.8;margin-bottom:32px">We specialize in residential properties, commercial spaces, and investment opportunities. Our transparent process ensures you make informed property decisions with confidence.</p>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+<div class="glass" style="padding:20px;text-align:center"><div style="font-size:1.5rem;font-weight:900;background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px">Full</div><div style="color:var(--tm);font-size:.8rem">Legal Support</div></div>
+<div class="glass" style="padding:20px;text-align:center"><div style="font-size:1.5rem;font-weight:900;background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px">24/7</div><div style="color:var(--tm);font-size:.8rem">Agent Support</div></div>
+<div class="glass" style="padding:20px;text-align:center"><div style="font-size:1.5rem;font-weight:900;background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px">Clear</div><div style="color:var(--tm);font-size:.8rem">Transparent Pricing</div></div>
+</div></div></div></div>
+<div id="rect" class="dpg"><div class="con">
+<h2 class="stitle">Contact Us</h2>
+<div class="cigrid">
+<div class="cicard"><span class="ciico">📞</span><h4>Phone</h4><p>0000-0000000</p></div>
+<div class="cicard"><span class="ciico">✉️</span><h4>Email</h4><a href="#">info@zentro-realestate.com</a></div>
+<div class="cicard"><span class="ciico">📍</span><h4>Office</h4><p>Shop XYZ, City ABC</p></div>
+</div>
+<div class="bksec"><button class="btsb" onclick="closeDemo('realestate')" style="font-size:1rem;padding:14px 32px">← Back To Site</button></div>
+</div></div>
+</div>
 
-        mobMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobMenuBtn.innerHTML = navMenu.classList.contains('active') ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
-        });
+<!-- SCHOOL DEMO -->
+<div id="demo-school" class="dov">
+<div class="dnav"><div class="dnavi">
+<div class="dnlogo">🏫 Zentro Education</div>
+<ul class="dnlinks">
+<li><a onclick="showPage('school','sch')" class="act">Home</a></li>
+<li><a onclick="showPage('school','scac')">Academics</a></li>
+<li><a onclick="showPage('school','scad')">Admissions</a></li>
+<li><a onclick="showPage('school','scgal')">Gallery</a></li>
+<li><a onclick="showPage('school','scev')">Events</a></li>
+<li><a onclick="showPage('school','scct')">Contact</a></li>
+</ul>
+<button class="btsb" onclick="closeDemo('school')">← Back To Site</button>
+</div></div>
+<div id="sch" class="dpg active"><div class="con">
+<div class="rhero" style="background:linear-gradient(135deg,rgba(104,211,145,.08),rgba(99,179,237,.08))">
+<h1 style="background:linear-gradient(135deg,#68d391,#63b3ed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Zentro System of Education</h1>
+<p>Nurturing minds, building futures. Our institution delivers world-class education equipping every student with knowledge, critical thinking, and the values to succeed.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px">
+<div class="glass" style="padding:24px;text-align:center"><div style="font-size:2rem;margin-bottom:8px">📚</div><h4 style="color:var(--tp);margin-bottom:4px">Structured Curriculum</h4><p style="color:var(--ts);font-size:.85rem">From Kindergarten to Grade 12</p></div>
+<div class="glass" style="padding:24px;text-align:center"><div style="font-size:2rem;margin-bottom:8px">👩‍🏫</div><h4 style="color:var(--tp);margin-bottom:4px">Qualified Faculty</h4><p style="color:var(--ts);font-size:.85rem">Experienced, certified educators</p></div>
+<div class="glass" style="padding:24px;text-align:center"><div style="font-size:2rem;margin-bottom:8px">🔬</div><h4 style="color:var(--tp);margin-bottom:4px">Modern Facilities</h4><p style="color:var(--ts);font-size:.85rem">Labs, library &amp; sports grounds</p></div>
+<div class="glass" style="padding:24px;text-align:center"><div style="font-size:2rem;margin-bottom:8px">🌐</div><h4 style="color:var(--tp);margin-bottom:4px">Digital Learning</h4><p style="color:var(--ts);font-size:.85rem">Smart classrooms &amp; e-learning</p></div>
+</div></div></div>
+<div id="scac" class="dpg"><div class="con">
+<h2 class="stitle">Academics</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+<div class="glass" style="padding:28px"><h4 style="color:var(--ac);margin-bottom:12px">🌸 Early Years (KG–Grade 2)</h4><p style="color:var(--ts);font-size:.9rem;line-height:1.7">Play-based learning focused on literacy, numeracy, social skills, and creative expression in a nurturing, safe environment.</p></div>
+<div class="glass" style="padding:28px"><h4 style="color:var(--ac);margin-bottom:12px">📗 Primary School (Grades 3–5)</h4><p style="color:var(--ts);font-size:.9rem;line-height:1.7">Core subjects: English, Mathematics, Science, Social Studies, Urdu, and Computer Science with project-based learning.</p></div>
+<div class="glass" style="padding:28px"><h4 style="color:var(--ac);margin-bottom:12px">📘 Middle School (Grades 6–8)</h4><p style="color:var(--ts);font-size:.9rem;line-height:1.7">Deepening foundations with introduction to Physics, Chemistry, Biology, and advanced Mathematics.</p></div>
+<div class="glass" style="padding:28px"><h4 style="color:var(--ac);margin-bottom:12px">🎓 Secondary (Grades 9–12)</h4><p style="color:var(--ts);font-size:.9rem;line-height:1.7">Matriculation and higher secondary education preparing students for university entrance examinations.</p></div>
+<div class="glass" style="padding:28px"><h4 style="color:var(--ac);margin-bottom:12px">💻 Computer Science</h4><p style="color:var(--ts);font-size:.9rem;line-height:1.7">Dedicated ICT program from Grade 3 onwards covering programming, robotics, and digital literacy.</p></div>
+<div class="glass" style="padding:28px"><h4 style="color:var(--ac);margin-bottom:12px">🎨 Arts &amp; Co-Curricular</h4><p style="color:var(--ts);font-size:.9rem;line-height:1.7">Music, visual arts, drama, and sports programs developing well-rounded individuals beyond academics.</p></div>
+</div></div></div>
+<div id="scad" class="dpg"><div class="con">
+<h2 class="stitle">Admissions</h2>
+<div style="max-width:700px;margin:0 auto">
+<div class="glass" style="padding:32px;margin-bottom:24px">
+<h3 style="color:var(--tp);margin-bottom:16px">Admission Requirements</h3>
+<div class="ditem">Birth certificate or B-form for identification verification</div>
+<div class="ditem">Previous school leaving certificate and academic transcripts</div>
+<div class="ditem">Passport-size photographs (4 copies)</div>
+<div class="ditem">Completion of the official Zentro admission form</div>
+<div class="ditem">Written entry assessment for Grades 4 and above</div>
+<div class="ditem">Parent/guardian interview for new admissions</div>
+</div>
+<div class="rfwrap" style="max-width:100%">
+<h3 style="color:var(--tp);margin-bottom:20px;text-align:center">Admission Enquiry</h3>
+<div class="fgrp"><label>Student Name</label><input type="text" placeholder="Full name of student"></div>
+<div class="frow">
+<div class="fgrp"><label>Grade Applying For</label><select><option>Select Grade</option><option>KG</option><option>Grade 1</option><option>Grade 2</option><option>Grade 3</option><option>Grade 4</option><option>Grade 5</option><option>Grade 6</option><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option><option>Grade 10</option></select></div>
+<div class="fgrp"><label>Parent Contact</label><input type="tel" placeholder="Phone number"></div>
+</div>
+<button class="btn btnp" style="width:100%;justify-content:center" onclick="alert('Enquiry submitted! Our admissions team will contact you within 24 hours.')">Submit Enquiry</button>
+</div></div></div></div>
+<div id="scgal" class="dpg"><div class="con">
+<h2 class="stitle">School Gallery</h2>
+<div class="gal4">
+<div class="galc"><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=250&fit=crop" alt="School" loading="lazy"></div>
+<div class="galc"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&h=250&fit=crop" alt="Classroom" loading="lazy"></div>
+<div class="galc"><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&h=250&fit=crop" alt="Library" loading="lazy"></div>
+<div class="galc"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=250&fit=crop" alt="Students" loading="lazy"></div>
+<div class="galc"><img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=400&h=250&fit=crop" alt="Lab" loading="lazy"></div>
+<div class="galc"><img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=400&h=250&fit=crop" alt="Computer Lab" loading="lazy"></div>
+<div class="galc"><img src="https://images.unsplash.com/photo-1534126511673-b6899657816a?w=400&h=250&fit=crop" alt="Sports" loading="lazy"></div>
+<div class="galc"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=250&fit=crop" alt="Study" loading="lazy"></div>
+</div></div></div>
+<div id="scev" class="dpg"><div class="con">
+<h2 class="stitle">Events &amp; Activities</h2>
+<div class="evgrid">
+<div class="evcard"><div class="evdate">ANNUAL EVENT</div><h4>Annual Prize Distribution Ceremony</h4><p>Celebrating academic excellence and student achievements across all grades with awards, performances, and guest speakers.</p></div>
+<div class="evcard"><div class="evdate">ANNUAL EVENT</div><h4>Sports Day &amp; Athletics Meet</h4><p>Inter-house sports competition including track events, team sports, and individual athletic competitions for all grades.</p></div>
+<div class="evcard"><div class="evdate">ANNUAL EVENT</div><h4>Science &amp; Technology Exhibition</h4><p>Students showcase innovative projects, experiments, and technology solutions developed throughout the academic year.</p></div>
+<div class="evcard"><div class="evdate">ACTIVITY</div><h4>Arts &amp; Culture Festival</h4><p>A celebration of music, drama, visual arts, and cultural performances representing the diverse talent of our student community.</p></div>
+<div class="evcard"><div class="evdate">ACTIVITY</div><h4>Inter-School Debate Competition</h4><p>Developing critical thinking, public speaking, and argumentation skills through competitive academic debate events.</p></div>
+<div class="evcard"><div class="evdate">PROGRAM</div><h4>Career Guidance Workshop</h4><p>Connecting Grade 9–12 students with professionals and mentors for career planning and university guidance.</p></div>
+</div></div></div>
+<div id="scct" class="dpg"><div class="con">
+<h2 class="stitle">Contact &amp; Location</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:800px;margin:0 auto">
+<div class="loccard" style="text-align:left"><h3 style="color:var(--tp);margin-bottom:16px">📍 Our Location</h3><p style="color:var(--ac);font-weight:700;margin-bottom:8px">Zentro System of Education</p><p style="color:var(--ts);margin-bottom:4px">Building ABC, Education Road</p><p style="color:var(--ts);margin-bottom:4px">City ABC, Central District</p><p style="color:var(--tm);font-size:.85rem;margin-top:12px">Office Hours: Mon–Sat | 8:00 AM – 4:00 PM</p></div>
+<div class="loccard" style="text-align:left"><h3 style="color:var(--tp);margin-bottom:16px">📞 Contact Info</h3><p style="color:var(--ts);margin-bottom:8px">📞 Phone: 0000-0000000</p><p style="color:var(--ts);margin-bottom:8px">✉️ Email: info@zentro-school.com</p><p style="color:var(--ts);margin-bottom:8px">💬 WhatsApp: +00-000-0000000</p></div>
+</div>
+<div class="bksec"><button class="btsb" onclick="closeDemo('school')" style="font-size:1rem;padding:14px 32px">← Back To Site</button></div>
+</div></div>
+</div>
+<!-- CLINIC DEMO -->
+<div id="demo-clinic" class="dov">
+<div class="dnav"><div class="dnavi">
+<div class="dnlogo">🏥 Zentro Hospital</div>
+<ul class="dnlinks">
+<li><a onclick="showPage('clinic','clh')" class="act">Home</a></li>
+<li><a onclick="showPage('clinic','clsv')">Services</a></li>
+<li><a onclick="showPage('clinic','cldr')">Doctors</a></li>
+<li><a onclick="showPage('clinic','cldp')">Departments</a></li>
+<li><a onclick="showPage('clinic','clap')">Appointment</a></li>
+<li><a onclick="showPage('clinic','clct')">Contact</a></li>
+</ul>
+<button class="btsb" onclick="closeDemo('clinic')">← Back To Site</button>
+</div></div>
+<div id="clh" class="dpg active"><div class="con">
+<div class="rhero" style="background:linear-gradient(135deg,rgba(252,129,129,.08),rgba(99,179,237,.06))">
+<h1 style="background:linear-gradient(135deg,#fc8181,#63b3ed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Zentro Hospital</h1>
+<p>Compassionate care, advanced medicine. Our multidisciplinary medical team provides comprehensive healthcare with a patient-first approach.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px">
+<div class="glass" style="padding:24px;text-align:center"><div style="font-size:2rem;margin-bottom:8px">🩺</div><h4 style="color:var(--tp);margin-bottom:4px">General Medicine</h4><p style="color:var(--ts);font-size:.85rem">Primary &amp; preventive care</p></div>
+<div class="glass" style="padding:24px;text-align:center"><div style="font-size:2rem;margin-bottom:8px">🔬</div><h4 style="color:var(--tp);margin-bottom:4px">Diagnostics</h4><p style="color:var(--ts);font-size:.85rem">Advanced lab &amp; imaging</p></div>
+<div class="glass" style="padding:24px;text-align:center"><div style="font-size:2rem;margin-bottom:8px">🚑</div><h4 style="color:var(--tp);margin-bottom:4px">Emergency Care</h4><p style="color:var(--ts);font-size:.85rem">24/7 emergency services</p></div>
+<div class="glass" style="padding:24px;text-align:center"><div style="font-size:2rem;margin-bottom:8px">💊</div><h4 style="color:var(--tp);margin-bottom:4px">Pharmacy</h4><p style="color:var(--ts);font-size:.85rem">On-site medication services</p></div>
+</div></div></div>
+<div id="clsv" class="dpg"><div class="con">
+<h2 class="stitle">Medical Services</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+<div class="glass" style="padding:28px"><div style="font-size:1.8rem;margin-bottom:12px">🩺</div><h4 style="color:var(--tp);margin-bottom:8px">General Consultation</h4><p style="color:var(--ts);font-size:.9rem;line-height:1.7">Comprehensive medical consultations for diagnosis, treatment planning, and health screening for all ages.</p></div>
+<div class="glass" style="padding:28px"><div style="font-size:1.8rem;margin-bottom:12px">🔬</div><h4 style="color:var(--tp);margin-bottom:8px">Laboratory Services</h4><p style="color:var(--ts);font-size:.9rem;line-height:1.7">Full diagnostic laboratory with blood work, urinalysis, microbiology, and specialized panel testing.</p></div>
+<div class="glass" style="padding:28px"><div style="font-size:1.8rem;margin-bottom:12px">📷</div><h4 style="color:var(--tp);margin-bottom:8px">Radiology &amp; Imaging</h4><p style="color:var(--ts);font-size:.9rem;line-height:1.7">Digital X-ray, ultrasound, ECG, and advanced imaging services for accurate diagnostic support.</p></div>
+<div class="glass" style="padding:28px"><div style="font-size:1.8rem;margin-bottom:12px">👶</div><h4 style="color:var(--tp);margin-bottom:8px">Pediatrics</h4><p style="color:var(--ts);font-size:.9rem;line-height:1.7">Specialized child healthcare including routine check-ups, vaccinations, and growth monitoring.</p></div>
+<div class="glass" style="padding:28px"><div style="font-size:1.8rem;margin-bottom:12px">❤️</div><h4 style="color:var(--tp);margin-bottom:8px">Cardiology</h4><p style="color:var(--ts);font-size:.9rem;line-height:1.7">Heart health assessments, ECG monitoring, blood pressure management, and cardiovascular evaluations.</p></div>
+<div class="glass" style="padding:28px"><div style="font-size:1.8rem;margin-bottom:12px">🦷</div><h4 style="color:var(--tp);margin-bottom:8px">Dental Care</h4><p style="color:var(--ts);font-size:.9rem;line-height:1.7">Comprehensive dental services including cleaning, fillings, extractions, and cosmetic procedures.</p></div>
+</div></div></div>
+<div id="cldr" class="dpg"><div class="con">
+<h2 class="stitle">Our Medical Team</h2>
+<div class="drgrid">
+<div class="drcard"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&h=220&fit=crop&crop=face" alt="Doctor" loading="lazy"><div class="drcardi"><h4>Dr. Ahmad Karimi</h4><p>Chief Physician</p><span>General Medicine</span></div></div>
+<div class="drcard"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&h=220&fit=crop&crop=face" alt="Doctor" loading="lazy"><div class="drcardi"><h4>Dr. Sarah Mitchell</h4><p>Pediatrician</p><span>Child Healthcare</span></div></div>
+<div class="drcard"><img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=300&h=220&fit=crop&crop=face" alt="Doctor" loading="lazy"><div class="drcardi"><h4>Dr. James Okafor</h4><p>Cardiologist</p><span>Heart &amp; Vascular</span></div></div>
+<div class="drcard"><img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&h=220&fit=crop&crop=face" alt="Doctor" loading="lazy"><div class="drcardi"><h4>Dr. Ayesha Raza</h4><p>Gynecologist</p><span>Women's Health</span></div></div>
+<div class="drcard"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=300&h=220&fit=crop&crop=face" alt="Doctor" loading="lazy"><div class="drcardi"><h4>Dr. Omar Hassan</h4><p>Orthopedic Surgeon</p><span>Bones &amp; Joints</span></div></div>
+<div class="drcard"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=300&h=220&fit=crop&crop=face" alt="Doctor" loading="lazy"><div class="drcardi"><h4>Dr. Priya Sharma</h4><p>Dermatologist</p><span>Skin &amp; Hair</span></div></div>
+</div></div></div>
+<div id="cldp" class="dpg"><div class="con">
+<h2 class="stitle">Departments</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+<div class="glass" style="padding:20px;text-align:center"><div style="font-size:1.6rem;margin-bottom:8px">🩺</div><p style="color:var(--tp);font-weight:700;font-size:.9rem">General Medicine</p></div>
+<div class="glass" style="padding:20px;text-align:center"><div style="font-size:1.6rem;margin-bottom:8px">❤️</div><p style="color:var(--tp);font-weight:700;font-size:.9rem">Cardiology</p></div>
+<div class="glass" style="padding:20px;text-align:center"><div style="font-size:1.6rem;margin-bottom:8px">👶</div><p style="color:var(--tp);font-weight:700;font-size:.9rem">Pediatrics</p></div>
+<div class="glass" style="padding:20px;text-align:center"><div style="font-size:1.6rem;margin-bottom:8px">🦴</div><p style="color:var(--tp);font-weight:700;font-size:.9rem">Orthopedics</p></div>
+<div class="glass" style="padding:20px;text-align:center"><div style="font-size:1.6rem;margin-bottom:8px">🧠</div><p style="color:var(--tp);font-weight:700;font-size:.9rem">Neurology</p></div>
+<div class="glass" style="padding:20px;text-align:center"><div style="font-size:1.6rem;margin-bottom:8px">🫁</div><p style="color:var(--tp);font-weight:700;font-size:.9rem">Pulmonology</p></div>
+<div class="glass" style="padding:20px;text-align:center"><div style="font-size:1.6rem;margin-bottom:8px">👁️</div><p style="color:var(--tp);font-weight:700;font-size:.9rem">Ophthalmology</p></div>
+<div class="glass" style="padding:20px;text-align:center"><div style="font-size:1.6rem;margin-bottom:8px">🦷</div><p style="color:var(--tp);font-weight:700;font-size:.9rem">Dental</p></div>
+<div class="glass" style="padding:20px;text-align:center"><div style="font-size:1.6rem;margin-bottom:8px">🔬</div><p style="color:var(--tp);font-weight:700;font-size:.9rem">Pathology</p></div>
+<div class="glass" style="padding:20px;text-align:center"><div style="font-size:1.6rem;margin-bottom:8px">🚑</div><p style="color:var(--tp);font-weight:700;font-size:.9rem">Emergency</p></div>
+</div></div></div>
+<div id="clap" class="dpg"><div class="con">
+<h2 class="stitle">Book Appointment</h2>
+<div class="rfwrap">
+<div class="fgrp"><label>Patient Name</label><input type="text" placeholder="Full name"></div>
+<div class="frow">
+<div class="fgrp"><label>Phone Number</label><input type="tel" placeholder="Contact number"></div>
+<div class="fgrp"><label>Age</label><input type="number" placeholder="Patient age"></div>
+</div>
+<div class="fgrp"><label>Department</label><select><option>Select Department</option><option>General Medicine</option><option>Cardiology</option><option>Pediatrics</option><option>Orthopedics</option><option>Dentistry</option><option>Dermatology</option><option>Gynecology</option><option>Neurology</option></select></div>
+<div class="frow">
+<div class="fgrp"><label>Preferred Date</label><input type="date"></div>
+<div class="fgrp"><label>Preferred Time</label><input type="time"></div>
+</div>
+<div class="fgrp"><label>Medical Concern</label><textarea rows="3" placeholder="Describe your symptoms or reason for visit..."></textarea></div>
+<button class="btn btnp" style="width:100%;justify-content:center" onclick="alert('Appointment request received! Our team will confirm within 2 hours.')">Request Appointment</button>
+</div></div></div>
+<div id="clct" class="dpg"><div class="con">
+<h2 class="stitle">Contact &amp; Location</h2>
+<div class="cigrid">
+<div class="cicard"><span class="ciico">📞</span><h4>Helpline</h4><p>0000-0000000</p><p style="font-size:.8rem;color:var(--tm);margin-top:4px">24/7 Emergency Line</p></div>
+<div class="cicard"><span class="ciico">📍</span><h4>Location</h4><p>Hospital Road, City ABC</p><p style="font-size:.8rem;color:var(--tm);margin-top:4px">Central Medical District</p></div>
+<div class="cicard"><span class="ciico">✉️</span><h4>Email</h4><a href="#">contact@zentro-hospital.com</a></div>
+</div>
+<div class="bksec"><button class="btsb" onclick="closeDemo('clinic')" style="font-size:1rem;padding:14px 32px">← Back To Site</button></div>
+</div></div>
+</div>
 
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobMenuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-                document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
-                link.classList.add('active');
-            });
-        });
+<!-- E-COMMERCE DEMO -->
+<div id="demo-ecommerce" class="dov">
+<div class="dnav"><div class="dnavi">
+<div class="dnlogo">🛒 Zentro E-Commerce</div>
+<ul class="dnlinks">
+<li><a onclick="showPage('ecommerce','ech')" class="act">Home</a></li>
+<li><a onclick="showPage('ecommerce','eccat')">Categories</a></li>
+<li><a onclick="showPage('ecommerce','ecpr')">Products</a></li>
+<li><a onclick="showPage('ecommerce','ecft')">Featured</a></li>
+<li><a onclick="showPage('ecommerce','eccart')">Cart</a></li>
+<li><a onclick="showPage('ecommerce','ecct')">Contact</a></li>
+</ul>
+<button class="btsb" onclick="closeDemo('ecommerce')">← Back To Site</button>
+</div></div>
+<div id="ech" class="dpg active"><div class="con">
+<div class="rhero" style="background:linear-gradient(135deg,rgba(251,211,141,.08),rgba(183,148,244,.08))">
+<h1 style="background:linear-gradient(135deg,#fbd38d,#b794f4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Zentro E-Commerce</h1>
+<p>Your one-stop destination for premium products. Shop with confidence — quality guaranteed, fast delivery, and hassle-free returns on every order.</p>
+<div style="margin-top:24px"><button class="btn btnp" onclick="showPage('ecommerce','ecpr')">Shop Now</button></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px">
+<div class="glass" style="padding:24px;text-align:center"><div style="font-size:2rem;margin-bottom:8px">🚀</div><h4 style="color:var(--tp);margin-bottom:4px">Fast Shipping</h4><p style="color:var(--ts);font-size:.85rem">Delivery in 2–5 business days</p></div>
+<div class="glass" style="padding:24px;text-align:center"><div style="font-size:2rem;margin-bottom:8px">🛡️</div><h4 style="color:var(--tp);margin-bottom:4px">Secure Payment</h4><p style="color:var(--ts);font-size:.85rem">100% safe &amp; encrypted checkout</p></div>
+<div class="glass" style="padding:24px;text-align:center"><div style="font-size:2rem;margin-bottom:8px">↩️</div><h4 style="color:var(--tp);margin-bottom:4px">Easy Returns</h4><p style="color:var(--ts);font-size:.85rem">30-day hassle-free returns</p></div>
+<div class="glass" style="padding:24px;text-align:center"><div style="font-size:2rem;margin-bottom:8px">💬</div><h4 style="color:var(--tp);margin-bottom:4px">24/7 Support</h4><p style="color:var(--ts);font-size:.85rem">Always here to help you</p></div>
+</div></div></div>
+<div id="eccat" class="dpg"><div class="con">
+<h2 class="stitle">Shop by Category</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px">
+<div class="glass" style="padding:28px;text-align:center;cursor:pointer"><div style="font-size:2.5rem;margin-bottom:12px">📱</div><h4 style="color:var(--tp);margin-bottom:4px">Electronics</h4><p style="color:var(--tm);font-size:.8rem">Phones, Laptops &amp; More</p></div>
+<div class="glass" style="padding:28px;text-align:center;cursor:pointer"><div style="font-size:2.5rem;margin-bottom:12px">👗</div><h4 style="color:var(--tp);margin-bottom:4px">Fashion</h4><p style="color:var(--tm);font-size:.8rem">Clothing &amp; Accessories</p></div>
+<div class="glass" style="padding:28px;text-align:center;cursor:pointer"><div style="font-size:2.5rem;margin-bottom:12px">🏠</div><h4 style="color:var(--tp);margin-bottom:4px">Home &amp; Living</h4><p style="color:var(--tm);font-size:.8rem">Furniture &amp; Décor</p></div>
+<div class="glass" style="padding:28px;text-align:center;cursor:pointer"><div style="font-size:2.5rem;margin-bottom:12px">💄</div><h4 style="color:var(--tp);margin-bottom:4px">Beauty</h4><p style="color:var(--tm);font-size:.8rem">Skincare &amp; Cosmetics</p></div>
+<div class="glass" style="padding:28px;text-align:center;cursor:pointer"><div style="font-size:2.5rem;margin-bottom:12px">⚽</div><h4 style="color:var(--tp);margin-bottom:4px">Sports</h4><p style="color:var(--tm);font-size:.8rem">Fitness &amp; Outdoor</p></div>
+<div class="glass" style="padding:28px;text-align:center;cursor:pointer"><div style="font-size:2.5rem;margin-bottom:12px">📚</div><h4 style="color:var(--tp);margin-bottom:4px">Books</h4><p style="color:var(--tm);font-size:.8rem">Education &amp; Learning</p></div>
+</div></div></div>
+<div id="ecpr" class="dpg"><div class="con">
+<h2 class="stitle">All Products</h2>
+<div class="prodgrid">
+<div class="prcard"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=220&fit=crop" alt="Watch" loading="lazy"><div class="prcardi"><h4>Premium Watch</h4><div class="cat">⌚ Accessories</div><div class="price">$89.99</div><button class="acbtn" onclick="addCart('Premium Watch',89.99)">Add to Cart</button></div></div>
+<div class="prcard"><img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=300&h=220&fit=crop" alt="Perfume" loading="lazy"><div class="prcardi"><h4>Luxury Perfume</h4><div class="cat">💄 Beauty</div><div class="price">$65.00</div><button class="acbtn" onclick="addCart('Luxury Perfume',65)">Add to Cart</button></div></div>
+<div class="prcard"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=300&h=220&fit=crop" alt="Shoes" loading="lazy"><div class="prcardi"><h4>Running Shoes</h4><div class="cat">⚽ Sports</div><div class="price">$120.00</div><button class="acbtn" onclick="addCart('Running Shoes',120)">Add to Cart</button></div></div>
+<div class="prcard"><img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=300&h=220&fit=crop" alt="Camera" loading="lazy"><div class="prcardi"><h4>Polaroid Camera</h4><div class="cat">📱 Electronics</div><div class="price">$79.99</div><button class="acbtn" onclick="addCart('Polaroid Camera',79.99)">Add to Cart</button></div></div>
+<div class="prcard"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=220&fit=crop" alt="Backpack" loading="lazy"><div class="prcardi"><h4>Travel Backpack</h4><div class="cat">👗 Fashion</div><div class="price">$55.00</div><button class="acbtn" onclick="addCart('Travel Backpack',55)">Add to Cart</button></div></div>
+<div class="prcard"><img src="https://images.unsplash.com/photo-1481833761820-0509d3217039?w=300&h=220&fit=crop" alt="Headphones" loading="lazy"><div class="prcardi"><h4>Wireless Headphones</h4><div class="cat">📱 Electronics</div><div class="price">$149.99</div><button class="acbtn" onclick="addCart('Wireless Headphones',149.99)">Add to Cart</button></div></div>
+<div class="prcard"><img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=300&h=220&fit=crop" alt="Sunglasses" loading="lazy"><div class="prcardi"><h4>Designer Sunglasses</h4><div class="cat">⌚ Accessories</div><div class="price">$45.00</div><button class="acbtn" onclick="addCart('Designer Sunglasses',45)">Add to Cart</button></div></div>
+<div class="prcard"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=220&fit=crop" alt="Shirt" loading="lazy"><div class="prcardi"><h4>Premium Dress Shirt</h4><div class="cat">👗 Fashion</div><div class="price">$38.00</div><button class="acbtn" onclick="addCart('Dress Shirt',38)">Add to Cart</button></div></div>
+</div></div></div>
+<div id="ecft" class="dpg"><div class="con">
+<h2 class="stitle">Featured Products</h2>
+<div class="prodgrid">
+<div class="prcard" style="border-color:rgba(251,211,141,.4)"><img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=300&h=220&fit=crop" alt="Perfume" loading="lazy"><div class="prcardi"><h4>⭐ Luxury Perfume Set</h4><div class="cat">💄 Best Seller</div><div class="price">$110.00</div><button class="acbtn" onclick="addCart('Luxury Perfume Set',110)">Add to Cart</button></div></div>
+<div class="prcard" style="border-color:rgba(251,211,141,.4)"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=220&fit=crop" alt="Watch" loading="lazy"><div class="prcardi"><h4>⭐ Classic Timepiece</h4><div class="cat">⌚ Top Rated</div><div class="price">$199.99</div><button class="acbtn" onclick="addCart('Classic Timepiece',199.99)">Add to Cart</button></div></div>
+<div class="prcard" style="border-color:rgba(251,211,141,.4)"><img src="https://images.unsplash.com/photo-1481833761820-0509d3217039?w=300&h=220&fit=crop" alt="Headphones" loading="lazy"><div class="prcardi"><h4>⭐ Pro Headphones</h4><div class="cat">📱 Editor's Choice</div><div class="price">$249.99</div><button class="acbtn" onclick="addCart('Pro Headphones',249.99)">Add to Cart</button></div></div>
+<div class="prcard" style="border-color:rgba(251,211,141,.4)"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=300&h=220&fit=crop" alt="Shoes" loading="lazy"><div class="prcardi"><h4>⭐ Pro Running Shoes</h4><div class="cat">⚽ Most Loved</div><div class="price">$179.00</div><button class="acbtn" onclick="addCart('Pro Running Shoes',179)">Add to Cart</button></div></div>
+</div></div></div>
+<div id="eccart" class="dpg"><div class="con">
+<h2 class="stitle">Your Cart</h2>
+<div id="cartcon" style="max-width:700px;margin:0 auto">
+<div id="cartempty" style="text-align:center;padding:60px;color:var(--tm)"><div style="font-size:3rem;margin-bottom:16px">🛒</div><p>Your cart is empty. Start shopping!</p><button class="btn btnp" style="margin-top:16px" onclick="showPage('ecommerce','ecpr')">Browse Products</button></div>
+<div id="cartitems" style="display:none">
+<div id="cartlist"></div>
+<div class="glass" style="padding:24px;margin-top:20px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><span style="color:var(--ts)">Subtotal</span><span id="carttotal" style="font-weight:700;color:var(--tp);font-size:1.2rem">$0.00</span></div>
+<button class="btn btnp" style="width:100%;justify-content:center" onclick="alert('This is a demo. In a real store, you would proceed to checkout here.')">Proceed to Checkout</button>
+</div></div></div></div></div>
+<div id="ecct" class="dpg"><div class="con">
+<h2 class="stitle">Contact Us</h2>
+<div class="cigrid">
+<div class="cicard"><span class="ciico">💬</span><h4>Live Chat</h4><p>Available 24/7</p></div>
+<div class="cicard"><span class="ciico">✉️</span><h4>Email</h4><a href="#">support@zentro-store.com</a></div>
+<div class="cicard"><span class="ciico">📞</span><h4>Phone</h4><p>0000-0000000</p></div>
+</div>
+<div class="bksec"><button class="btsb" onclick="closeDemo('ecommerce')" style="font-size:1rem;padding:14px 32px">← Back To Site</button></div>
+</div></div>
+</div>
+<!-- ABOUT -->
+<section id="about" class="sec">
+<div class="con">
+<div class="stitle fade">About Us</div>
+<p class="ssub fade">Who we are, how we work, and why businesses trust Zentro AI.</p>
+<div class="abgrid fade">
+<div class="abtxt">
+<h2>Who We Are</h2>
+<p>Zentro AI Development Agency is a dedicated digital solutions provider focused on building intelligent, high-performance web systems and automation tools for businesses of every size.</p>
+<p>We bring together expertise in web development, AI automation, paid advertising, and SEO to deliver complete digital ecosystems — not just individual services. Every project is approached with a commitment to precision, reliability, and long-term value.</p>
+<h2 style="margin-top:32px">How We Work</h2>
+<p>We operate on a structured, transparent process — from requirement discovery and planning through development, testing, and post-launch support. Clients receive regular progress updates, clear timelines, and direct communication at every stage.</p>
+<p>Our work is guided by honest consultation and practical solutions. We don't oversell or add unnecessary complexity — we identify what your business actually needs and build it properly.</p>
+</div>
+<div class="abvis">
+<div class="abvico">🧠</div>
+<h3 style="color:var(--tp);font-size:1.4rem;margin-bottom:12px">AI-First Approach</h3>
+<p style="color:var(--ts);font-size:.9rem;line-height:1.7;margin-bottom:24px">Every solution we build is designed with automation, intelligence, and scalability at its core.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;text-align:left">
+<div class="glass" style="padding:14px"><div style="color:var(--ab);font-size:1.2rem;margin-bottom:4px">⚡</div><div style="color:var(--tp);font-size:.85rem;font-weight:700">Fast Delivery</div><div style="color:var(--tm);font-size:.75rem">On-time, every time</div></div>
+<div class="glass" style="padding:14px"><div style="color:var(--ap);font-size:1.2rem;margin-bottom:4px">🔒</div><div style="color:var(--tp);font-size:.85rem;font-weight:700">Secure Code</div><div style="color:var(--tm);font-size:.75rem">Security-first builds</div></div>
+<div class="glass" style="padding:14px"><div style="color:var(--ac);font-size:1.2rem;margin-bottom:4px">📞</div><div style="color:var(--tp);font-size:.85rem;font-weight:700">Direct Support</div><div style="color:var(--tm);font-size:.75rem">2 months post-delivery</div></div>
+<div class="glass" style="padding:14px"><div style="color:var(--apk);font-size:1.2rem;margin-bottom:4px">💡</div><div style="color:var(--tp);font-size:.85rem;font-weight:700">Honest Advice</div><div style="color:var(--tm);font-size:.75rem">No upselling ever</div></div>
+</div></div></div>
 
-        const toggleCart = () => {
-            cartSidebar.classList.toggle('active');
-            siteOverlay.classList.toggle('active');
-        };
-        cartToggleBtn.addEventListener('click', toggleCart);
-        closeCartBtn.addEventListener('click', toggleCart);
-        siteOverlay.addEventListener('click', () => {
-            cartSidebar.classList.remove('active');
-            siteOverlay.classList.remove('active');
-        });
+<div class="stitle fade" style="font-size:2rem;margin-bottom:32px">Why Choose Zentro AI</div>
+<div class="wcgrid fade">
+<div class="wccard"><span class="wcico">🎯</span><h4>Specialized in AI &amp; Automation</h4><p>We integrate intelligent automation into every project — from bots to backend workflows — so your business operates more efficiently.</p></div>
+<div class="wccard"><span class="wcico">📋</span><h4>Structured, Transparent Process</h4><p>You'll always know where your project stands. Clear milestones, regular updates, and no surprises — that's how every project runs.</p></div>
+<div class="wccard"><span class="wcico">🛡️</span><h4>Post-Delivery Support</h4><p>Every delivered project includes 2 full months of support to address changes, questions, or minor updates after launch.</p></div>
+<div class="wccard"><span class="wcico">💬</span><h4>Direct Communication</h4><p>You work directly with the team building your product — no account managers, no middlemen, and no miscommunication.</p></div>
+<div class="wccard"><span class="wcico">🔧</span><h4>End-to-End Capability</h4><p>Web, ads, bots, SEO, and maintenance — all under one roof. No need to juggle multiple agencies for different needs.</p></div>
+<div class="wccard"><span class="wcico">✅</span><h4>No Fake Claims</h4><p>We present real capabilities and honest expectations. Our work speaks for itself — no inflated numbers or fabricated credentials.</p></div>
+</div>
 
-        document.querySelectorAll('.faq-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const item = header.parentElement;
-                item.classList.toggle('active');
-                const body = item.querySelector('.faq-body');
-                if(item.classList.contains('active')) {
-                    body.style.maxHeight = body.scrollHeight + "px";
-                } else {
-                    body.style.maxHeight = "0";
-                }
-            });
-        });
+<div class="stitle fade" style="font-size:2rem;margin-bottom:12px">Our Process</div>
+<p class="ssub fade" style="margin-bottom:40px">Five structured stages from inquiry to delivery</p>
+<div class="prgrid fade">
+<div class="prpcard"><div class="prnum">01</div><h4>Analyze Requirements</h4><p>In-depth discovery session to understand your business goals, target audience, technical needs, and budget before any work begins.</p></div>
+<div class="prpcard"><div class="prnum">02</div><h4>Planning</h4><p>Detailed project plan including timeline, technology stack, architecture, design direction, and a clear scope of work for your approval.</p></div>
+<div class="prpcard"><div class="prnum">03</div><h4>Development</h4><p>Structured execution — building frontend, backend, integrations, and automations. Regular updates and feedback checkpoints throughout.</p></div>
+<div class="prpcard"><div class="prnum">04</div><h4>Testing</h4><p>Multiple testing stages: functionality, cross-browser, mobile responsiveness, performance benchmarking, security review, and user acceptance testing.</p></div>
+<div class="prpcard"><div class="prnum">05</div><h4>Delivery &amp; Support</h4><p>Full project handover with documentation. Payment completed upon satisfactory delivery. 2 months post-launch support window included for every project.</p></div>
+</div>
+</div></section>
 
-        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
-            button.addEventListener('click', (e) => {
-                const card = e.target.closest('.product-card');
-                const id = card.getAttribute('data-id');
-                const name = card.getAttribute('data-name');
-                const price = parseInt(card.getAttribute('data-price'));
-                
-                addToCart(id, name, price);
-                toggleCart();
-            });
-        });
+<!-- FAQ -->
+<section id="faq" class="sec" style="padding-top:0">
+<div class="con">
+<div class="stitle fade">Frequently Asked Questions</div>
+<p class="ssub fade">Honest answers to the questions clients ask most.</p>
+<div class="faqlist fade">
+<div class="faqitem">
+<button class="faqq" onclick="toggleFaq(this)">What types of businesses do you work with?<span class="faqico">+</span></button>
+<div class="faqa"><p>We work with businesses of all sizes — from startups and solo entrepreneurs to growing SMEs and established companies. We've built projects across restaurants, clinics, schools, real estate agencies, e-commerce stores, and professional service firms of all types.</p></div>
+</div>
+<div class="faqitem">
+<button class="faqq" onclick="toggleFaq(this)">How does the payment process work?<span class="faqico">+</span></button>
+<div class="faqa"><p>We work with a milestone-based payment structure. A partial advance is required before development begins to secure your project slot. The remaining balance is settled upon final delivery and your approval. For larger projects, payment can be split across multiple delivery milestones. Full terms are confirmed in writing before any work starts.</p></div>
+</div>
+<div class="faqitem">
+<button class="faqq" onclick="toggleFaq(this)">Do you offer emergency or urgent services?<span class="faqico">+</span></button>
+<div class="faqa"><p>Yes, we provide emergency services for critical issues such as site downtime, security breaches, or urgent bug fixes. <span class="ebdg">🚨 Emergency Service Available</span> An additional charge of 10% applies to emergency requests to account for priority scheduling and out-of-hours work. Contact us directly via WhatsApp or phone for the fastest response in urgent situations.</p></div>
+</div>
+<div class="faqitem">
+<button class="faqq" onclick="toggleFaq(this)">What is included in the 2-month post-delivery support?<span class="faqico">+</span></button>
+<div class="faqa"><p>The 2-month support period covers minor adjustments, bug fixes discovered after launch, guidance on using your platform, and answers to technical questions. It does not cover new feature development or significant scope additions, which would be quoted separately. The goal is to ensure everything performs as expected and you're fully comfortable operating it.</p></div>
+</div>
+<div class="faqitem">
+<button class="faqq" onclick="toggleFaq(this)">How long does a typical project take?<span class="faqico">+</span></button>
+<div class="faqa"><p>Delivery timelines depend on complexity and scope. Basic websites are typically delivered within 3–5 days. Standard and professional projects take 5–14 days. Custom and enterprise-level projects require a minimum of 14 days, with exact timelines determined during the planning phase. Timelines are always communicated clearly before work begins.</p></div>
+</div>
+<div class="faqitem">
+<button class="faqq" onclick="toggleFaq(this)">Can you work with an existing website or platform?<span class="faqico">+</span></button>
+<div class="faqa"><p>Absolutely. We regularly work with existing websites built on WordPress, Shopify, WooCommerce, and custom codebases. We can perform redesigns, add new functionality, fix existing issues, integrate automation tools, and migrate content — all without requiring you to start from scratch. We'll assess your setup and provide an honest recommendation for the best path forward.</p></div>
+</div>
+<div class="faqitem">
+<button class="faqq" onclick="toggleFaq(this)">What makes Zentro AI different from a standard web agency?<span class="faqico">+</span></button>
+<div class="faqa"><p>The key difference is our AI-first approach and full-service capabilities. While most web agencies focus exclusively on design and development, we integrate automation systems, SEO strategy, and data-driven advertising into every engagement. We also maintain a no-fake-claims policy: every capability we describe is something we can demonstrate with real work.</p></div>
+</div>
+</div></div></section>
+<!-- PRICING -->
+<section id="pricing" class="sec" style="padding-top:0">
+<div class="con">
+<div class="stitle fade">Pricing Plans</div>
+<p class="ssub fade">Transparent pricing for every stage of growth. No hidden fees, no surprises.</p>
+<div class="prigrid fade">
+<div class="pricard">
+<div class="priname">Basic</div><div class="priprice">$100–$150</div><div class="pridelv">Delivery: 3–5 Days</div>
+<ul class="prifeat"><li>Single-page or 3-page website</li><li>Mobile responsive design</li><li>Contact form integration</li><li>Basic SEO setup</li><li>SSL &amp; deployment</li><li>2 months support</li></ul>
+<button class="btn btno" onclick="openForm('$100–$150')">Get Started</button>
+</div>
+<div class="pricard">
+<div class="priname">Standard</div><div class="priprice">$150–$250</div><div class="pridelv">Delivery: 5–7 Days</div>
+<ul class="prifeat"><li>Up to 6 pages</li><li>Custom UI/UX design</li><li>CMS integration</li><li>On-page SEO</li><li>Google Analytics setup</li><li>2 months support</li></ul>
+<button class="btn btno" onclick="openForm('$150–$250')">Get Started</button>
+</div>
+<div class="pricard feat" style="padding-top:48px">
+<div class="priname">Professional</div><div class="priprice">$250–$400</div><div class="pridelv">Delivery: 7–10 Days</div>
+<ul class="prifeat"><li>Up to 12 pages</li><li>Advanced animations &amp; UI</li><li>Backend &amp; database</li><li>Full SEO optimization</li><li>Speed optimization</li><li>Admin panel included</li><li>2 months support</li></ul>
+<button class="btn btnp" onclick="openForm('$250–$400')">Get Started</button>
+</div>
+<div class="pricard">
+<div class="priname">Premium</div><div class="priprice">$400–$550</div><div class="pridelv">Delivery: 10–14 Days</div>
+<ul class="prifeat"><li>Unlimited pages</li><li>E-Commerce or booking</li><li>AI bot integration</li><li>Meta Ads setup</li><li>Advanced SEO package</li><li>Custom integrations</li><li>2 months support</li></ul>
+<button class="btn btno" onclick="openForm('$400–$550')">Get Started</button>
+</div>
+<div class="pricard">
+<div class="priname">Custom</div><div class="priprice">$550+ USD</div><div class="pridelv">Min. 14 Days (scope-dependent)</div>
+<ul class="prifeat"><li>Enterprise-scale projects</li><li>Full AI &amp; automation stack</li><li>Multi-platform deployment</li><li>Custom integrations &amp; APIs</li><li>Priority support channel</li><li>2 months support</li></ul>
+<button class="btn btno" onclick="openForm('$550+ (Custom)')">Get Started</button>
+</div>
+</div></div></section>
 
-        document.querySelectorAll('.buy-now-btn').forEach(button => {
-            button.addEventListener('click', (e) => {
-                const card = e.target.closest('.product-card');
-                const id = card.getAttribute('data-id');
-                const name = card.getAttribute('data-name');
-                const price = parseInt(card.getAttribute('data-price'));
-                
-                cart = []; 
-                addToCart(id, name, price);
-                openCheckout();
-            });
-        });
+<!-- PROJECT FORM -->
+<section id="project" class="sec" style="padding-top:0">
+<div class="con">
+<div class="pfsec fade">
+<h2>Let's Start Your Project</h2>
+<p>Tell us about your project and we'll get back to you within 24 hours with a detailed plan.</p>
+<form class="mform" id="projform" onsubmit="submitForm(event)">
+<div class="frow">
+<div class="fgrp"><label>Full Name *</label><input type="text" id="fn" placeholder="Your full name" required></div>
+<div class="fgrp"><label>Contact Number *</label><input type="tel" id="fp" placeholder="+92 323 8194763" required></div>
+</div>
+<div class="fgrp"><label>Business Name</label><input type="text" id="fb" placeholder="Your company or business name"></div>
+<div class="fgrp"><label>Budget Range *</label>
+<select id="fbudget" required>
+<option value="">Select your budget range</option>
+<option value="$100–$150">$100–$150 (Basic)</option>
+<option value="$150–$250">$150–$250 (Standard)</option>
+<option value="$250–$400">$250–$400 (Professional)</option>
+<option value="$400–$550">$400–$550 (Premium)</option>
+<option value="$550+ (Custom)">$550+ (Custom)</option>
+</select></div>
+<div class="fgrp"><label>Requirement Details *</label><textarea id="fd" rows="5" placeholder="Describe your project — what you need, goals, any specific features or preferences..." required></textarea></div>
+<button type="submit" class="btn btnp" style="width:100%;justify-content:center;padding:16px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z"/></svg>
+Submit Requirement</button>
+</form>
+<div class="fsuc" id="fsuccess">
+<div class="sico">✅</div>
+<h3>Requirement Submitted!</h3>
+<p>Your project details have been sent to our team at <strong>zentroaiagencypakistan@gmail.com</strong>. We'll review your requirements and respond within 24 hours.</p>
+</div>
+<p style="text-align:center;color:var(--tm);font-size:.8rem;margin-top:16px">Your submission will open your email client pre-filled and ready to send to zentroaiagencypakistan@gmail.com</p>
+</div></div></section>
 
-        const addToCart = (id, name, price) => {
-            const existingItem = cart.find(item => item.id === id);
-            if(existingItem) {
-                existingItem.qty += 1;
-            } else {
-                cart.push({ id, name, price, qty: 1 });
-            }
-            updateCartUI();
-        };
+<!-- CONTACT -->
+<section id="contact" class="sec" style="padding-top:0">
+<div class="con">
+<div class="stitle fade">Get in Touch</div>
+<p class="ssub fade">Have a question or ready to start? Reach out directly — we respond quickly.</p>
+<div class="ctmethods fade">
+<div class="ctcard">
+<span class="ico">📞</span><h3>Phone</h3>
+<a href="tel:+923238194763">+92 323 8194763</a>
+<a href="tel:03238194763">03238194763</a>
+</div>
+<div class="ctcard">
+<span class="ico">💬</span><h3>WhatsApp</h3>
+<p>Message us for a quick response</p>
+<a href="https://wa.me/923238194763" target="_blank" class="wabtn">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+Chat on WhatsApp</a>
+</div>
+<div class="ctcard">
+<span class="ico">✉️</span><h3>Email</h3>
+<a href="mailto:zentroaiagencypakistan@gmail.com">zentroaiagencypakistan@gmail.com</a>
+</div>
+</div></div></section>
 
-        const updateCartUI = () => {
-            const totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
-            cartCount.textContent = totalItems;
+<!-- FOOTER -->
+<footer>
+<div class="con">
+<div class="ftgrid">
+<div class="ftbrand">
+<div style="display:inline-flex;align-items:center;gap:12px"><div class="nico">Z</div><span class="ntxt" style="font-size:1.2rem">Zentro AI</span></div>
+<p>A full-service AI-powered digital agency delivering web development, automation, Meta Ads, and SEO solutions from Pakistan.</p>
+</div>
+<div class="ftcol"><h4>Services</h4><ul>
+<li><a href="#services">Web Development</a></li><li><a href="#services">Meta Ads</a></li>
+<li><a href="#services">AI Bots</a></li><li><a href="#services">SEO Growth</a></li>
+<li><a href="#services">Problem Solving</a></li></ul></div>
+<div class="ftcol"><h4>Company</h4><ul>
+<li><a href="#about">About Us</a></li><li><a href="#demos">Demo Sites</a></li>
+<li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li>
+<li><a href="#project">Start Project</a></li></ul></div>
+<div class="ftcol"><h4>Contact</h4><ul>
+<li><a href="tel:+923238194763">📞 03238194763</a></li>
+<li><a href="https://wa.me/923238194763" target="_blank">💬 WhatsApp</a></li>
+<li><a href="mailto:zentroaiagencypakistan@gmail.com">✉️ Email Us</a></li></ul></div>
+</div>
+<div class="ftbot">
+<p>© 2025 Zentro AI Development Agency. All rights reserved.</p>
+<p style="color:var(--tm);font-size:.8rem">Designed &amp; Developed by Zentro AI</p>
+</div></div></footer>
+<script>
+// NAV SCROLL
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40);
+});
+// MOBILE MENU
+function toggleMenu(){document.getElementById('mmenu').classList.toggle('open');}
+function closeMenu(){document.getElementById('mmenu').classList.remove('open');}
 
-            if(cart.length === 0) {
-                cartItemsContainer.innerHTML = '<p class="empty-cart-msg">Your cart is empty.</p>';
-                cartSubtotal.textContent = "Rs. 0";
-                return;
-            }
+// FADE IN
+const fels=document.querySelectorAll('.fade');
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});
+},{threshold:0.08});
+fels.forEach(el=>obs.observe(el));
 
-            let html = '';
-            let subtotal = 0;
+// SERVICE TOGGLE
+function toggleSvc(btn){
+  const det=btn.nextElementSibling;
+  const isOpen=det.classList.contains('open');
+  document.querySelectorAll('.svdet.open').forEach(d=>d.classList.remove('open'));
+  document.querySelectorAll('.lmbtn span').forEach(s=>s.textContent='Learn More');
+  document.querySelectorAll('.lmbtn svg').forEach(s=>s.style.transform='');
+  if(!isOpen){
+    det.classList.add('open');
+    btn.querySelector('span').textContent='Show Less';
+    btn.querySelector('svg').style.transform='rotate(180deg)';
+  }
+}
 
-            cart.forEach(item => {
-                const itemTotal = item.price * item.qty;
-                subtotal += itemTotal;
-                html += `
-                    <div class="cart-item">
-                        <div class="cart-item-details">
-                            <h4 class="cart-item-title">${item.name}</h4>
-                            <div class="cart-item-price">Rs. ${item.price.toLocaleString()}</div>
-                            <div class="cart-item-qty">
-                                <button class="qty-btn" onclick="changeQty('${item.id}', -1)"><i class="fa-solid fa-minus"></i></button>
-                                <span>${item.qty}</span>
-                                <button class="qty-btn" onclick="changeQty('${item.id}', 1)"><i class="fa-solid fa-plus"></i></button>
-                            </div>
-                        </div>
-                        <div class="remove-item" onclick="removeCartItem('${item.id}')"><i class="fa-solid fa-trash-can"></i></div>
-                    </div>
-                `;
-            });
+// DEMO SYSTEM
+function openDemo(name){
+  document.querySelectorAll('.dov').forEach(d=>d.classList.remove('active'));
+  const ov=document.getElementById('demo-'+name);
+  ov.classList.add('active');
+  document.body.style.overflow='hidden';
+  ov.querySelectorAll('.dpg').forEach(p=>p.classList.remove('active'));
+  ov.querySelector('.dpg').classList.add('active');
+  ov.querySelectorAll('.dnlinks a').forEach(a=>a.classList.remove('act'));
+  const fl=ov.querySelector('.dnlinks a');
+  if(fl)fl.classList.add('act');
+  ov.scrollTop=0;
+}
+function closeDemo(name){
+  document.getElementById('demo-'+name).classList.remove('active');
+  document.body.style.overflow='';
+}
+function showPage(demo,pageId){
+  const ov=document.getElementById('demo-'+demo);
+  ov.querySelectorAll('.dpg').forEach(p=>p.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
+  ov.querySelectorAll('.dnlinks a').forEach(a=>{
+    if(a.getAttribute('onclick')&&a.getAttribute('onclick').includes(pageId))a.classList.add('act');
+    else a.classList.remove('act');
+  });
+  ov.scrollTop=0;
+}
 
-            cartItemsContainer.innerHTML = html;
-            cartSubtotal.textContent = `Rs. ${subtotal.toLocaleString()}`;
-            updateCheckoutSummary();
-        };
+// FAQ
+function toggleFaq(btn){
+  const item=btn.parentElement;
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faqitem.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
 
-        window.changeQty = (id, delta) => {
-            const item = cart.find(i => i.id === id);
-            if(item) {
-                item.qty += delta;
-                if(item.qty <= 0) {
-                    cart = cart.filter(i => i.id !== id);
-                }
-                updateCartUI();
-            }
-        };
+// PRICING → FORM
+function openForm(budget){
+  document.getElementById('fbudget').value=budget;
+  document.getElementById('project').scrollIntoView({behavior:'smooth'});
+  setTimeout(()=>document.getElementById('fn').focus(),600);
+}
 
-        window.removeCartItem = (id) => {
-            cart = cart.filter(i => i.id !== id);
-            updateCartUI();
-        };
+// FORM SUBMIT
+function submitForm(e){
+  e.preventDefault();
+  const n=document.getElementById('fn').value;
+  const p=document.getElementById('fp').value;
+  const b=document.getElementById('fb').value;
+  const bud=document.getElementById('fbudget').value;
+  const d=document.getElementById('fd').value;
+  const sub=encodeURIComponent('New Project Requirement — '+(b||n));
+  const body=encodeURIComponent('Name: '+n+'\nPhone: '+p+'\nBusiness: '+(b||'N/A')+'\nBudget: '+bud+'\n\nRequirement Details:\n'+d);
+  window.location.href='mailto:zentroaiagencypakistan@gmail.com?subject='+sub+'&body='+body;
+  document.getElementById('projform').style.display='none';
+  document.getElementById('fsuccess').style.display='block';
+}
 
-        const openCheckout = () => {
-            if(cart.length === 0) {
-                alert("Kindly add at least 1 luxury scent to your bag before checking out.");
-                return;
-            }
-            checkoutSection.classList.add('active');
-            cartSidebar.classList.remove('active');
-            siteOverlay.classList.remove('active');
-            updateCheckoutSummary();
-            window.scrollTo({
-                top: checkoutSection.offsetTop - 80,
-                behavior: 'smooth'
-            });
-        };
-        checkoutBtn.addEventListener('click', openCheckout);
+// CART
+let cart=[];
+function addCart(name,price){
+  const ex=cart.find(c=>c.name===name);
+  if(ex)ex.qty++;else cart.push({name,price,qty:1});
+  renderCart();
+  const btn=event.target;
+  const orig=btn.textContent;
+  btn.textContent='✓ Added!';
+  btn.style.cssText='background:rgba(104,211,145,.2);border-color:rgba(104,211,145,.5);color:#68d391';
+  setTimeout(()=>{btn.textContent=orig;btn.style.cssText='';},1500);
+}
+function renderCart(){
+  const ce=document.getElementById('cartempty');
+  const ci=document.getElementById('cartitems');
+  const cl=document.getElementById('cartlist');
+  const ct=document.getElementById('carttotal');
+  if(!ce||!ci)return;
+  if(cart.length===0){ce.style.display='block';ci.style.display='none';return;}
+  ce.style.display='none';ci.style.display='block';
+  let total=0;
+  cl.innerHTML=cart.map((item,i)=>{
+    total+=item.price*item.qty;
+    return '<div class="glass" style="padding:16px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:16px"><div><div style="color:var(--tp);font-weight:700;font-size:.9rem">'+item.name+'</div><div style="color:var(--tm);font-size:.8rem">$'+item.price.toFixed(2)+' x '+item.qty+'</div></div><div style="display:flex;align-items:center;gap:12px"><span style="color:var(--ab);font-weight:700">$'+(item.price*item.qty).toFixed(2)+'</span><button onclick="removeCart('+i+')" style="background:rgba(252,129,129,.1);border:1px solid rgba(252,129,129,.3);border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--apk);font-size:.9rem;font-family:inherit">✕</button></div></div>';
+  }).join('');
+  ct.textContent='$'+total.toFixed(2);
+}
+function removeCart(i){cart.splice(i,1);renderCart();}
 
-        const updateCheckoutSummary = () => {
-            if(cart.length === 0) {
-                summaryItemsList.innerHTML = '<p style="color:var(--text-muted);">No products selected.</p>';
-                summaryTotalAmount.textContent = "Rs. 0";
-                checkoutSection.classList.remove('active');
-                return;
-            }
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    const id=this.getAttribute('href');
+    if(id==='#')return;
+    const el=document.querySelector(id);
+    if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});}
+  });
+});
 
-            let html = '';
-            let total = 0;
-            cart.forEach(item => {
-                const cost = item.price * item.qty;
-                total += cost;
-                html += `
-                    <div class="summary-item-row">
-                        <span>${item.name} <strong>x ${item.qty}</strong></span>
-                        <span>Rs. ${cost.toLocaleString()}</span>
-                    </div>
-                `;
-            });
-
-            summaryItemsList.innerHTML = html;
-            summaryTotalAmount.textContent = `Rs. ${total.toLocaleString()}`;
-        };
-
-        whatsappOrderForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            if(cart.length === 0) {
-                alert("Your cart is empty!");
-                return;
-            }
-
-            const name = document.getElementById('custName').value.trim();
-            const phone = document.getElementById('custPhone').value.trim();
-            const address = document.getElementById('custAddress').value.trim();
-            const city = document.getElementById('custCity').value.trim();
-            
-            let itemsString = '';
-            let grandTotal = 0;
-            cart.forEach((item, index) => {
-                const lineCost = item.price * item.qty;
-                grandTotal += lineCost;
-                itemsString += `${index + 1}. *${item.name}* [Qty: ${item.qty}] - Rs. ${lineCost.toLocaleString()}\n`;
-            });
-
-            const messageText = 
-`🏛️ *NEW ORDER - OTTOMAN SCENTS* 🏛️\n` +
-`----------------------------------------\n\n` +
-`👤 *CUSTOMER DETAILS:* \n` +
-`• *Name:* ${name}\n` +
-`• *Phone:* ${phone}\n` +
-`• *City:* ${city}\n` +
-`• *Address:* ${address}\n\n` +
-`📦 *ORDERED ITEMS:* \n` +
-`${itemsString}\n` +
-`----------------------------------------\n` +
-`🚚 *Shipping:* Free Delivery\n` +
-`💳 *Payment Method:* Cash on Delivery\n` +
-`💰 *TOTAL PAYABLE:* *Rs. ${grandTotal.toLocaleString()}*\n\n` +
-`----------------------------------------\n` +
-`Please confirm my order. Thank you! ✨`;
-
-            const encodedMessage = encodeURIComponent(messageText);
-            const whatsappUrl = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodedMessage}`;
-
-            cart = [];
-            updateCartUI();
-            whatsappOrderForm.reset();
-            window.open(whatsappUrl, '_blank');
-        });
-    </script>
+// ESC KEY
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    document.querySelectorAll('.dov.active').forEach(d=>{d.classList.remove('active');});
+    document.body.style.overflow='';
+  }
+});
+</script>
 </body>
 </html>
